@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Terms &amp; Conditions — ShieldBrowser for macOS</title>
+  <meta name="description" content="ShieldBrowser terms of service, single-seat personal software license, Apple Silicon M1-M6 compatibility, hardware UUID binding, and time-bound pass rules.">
+  <link rel="canonical" href="https://shieldbrowser.com/terms">
+
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <link rel="apple-touch-icon" href="assets/icons/app-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .legal-content {
+      padding: 130px 0 80px 0;
+      max-width: 880px;
+    }
+    .legal-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 52px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .legal-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-emerald);
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .legal-card h1 {
+      color: #ffffff;
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .legal-date {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .legal-card h2 {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 36px 0 14px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .legal-card h3 {
+      color: #e2e8f0;
+      font-size: 16px;
+      font-weight: 600;
+      margin: 20px 0 8px 0;
+    }
+    .legal-card p, .legal-card li {
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+    }
+    .legal-card strong {
+      color: #ffffff;
+    }
+    .legal-card ul {
+      margin-left: 24px;
+      margin-bottom: 18px;
+    }
+    .legal-highlight-box {
+      background: rgba(34, 197, 94, 0.06);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin: 24px 0;
+    }
+    .legal-highlight-box p {
+      margin-bottom: 0;
+      color: #d1fae5;
+    }
+  </style>
+</head>
+<body class="cyber-grid">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/icons/app-icon.png" alt="ShieldBrowser Logo" class="brand-logo-img">
+        <span class="brand-name">Shield<span>Browser</span></span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="features.html" class="nav-link">Features</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+          <li><a href="download.html" class="nav-link">Download</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="downloads/ShieldBrowser-v1.0.4.dmg" class="nav-download-btn" download>Download .DMG</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container legal-content">
+      <div class="legal-card">
+        <div class="legal-badge">Official Legal Document</div>
+        <h1>Terms &amp; Conditions</h1>
+        <div class="legal-date">Last Updated &amp; Effective: September 7, 2026 • Version 1.0.4</div>
+
+        <p>
+          Welcome to <strong>ShieldBrowser</strong> ("the Application", "Software", "we", "us", or "our"). These Terms and Conditions constitute a legally binding agreement between you ("Licensee", "User", or "you") and ShieldBrowser Technologies regarding your download, installation, activation, and usage of the ShieldBrowser macOS application and associated web services.
+        </p>
+        <p>
+          By downloading the <code>.dmg</code> installer, launching the application, or activating any time-bound pass, you explicitly acknowledge that you have read, understood, and agreed to be bound by these terms. If you do not agree to these terms, you must immediately cease using the Software and delete the installer bundle from your computer.
+        </p>
+
+        <div class="legal-highlight-box">
+          <p>
+            <strong>Summary:</strong> ShieldBrowser is a native privacy browser for macOS that operates on non-recurring, time-bound passes with zero auto-renewal traps. Each pass is cryptographically bound to one physical Mac (<code>IOPlatformUUID</code>). You are granted a personal license to use the software on your hardware.
+          </p>
+        </div>
+
+        <h2>1. Universal Architecture &amp; Hardware Compatibility</h2>
+        <p>
+          ShieldBrowser is compiled natively as an Apple Universal Mach-O binary (<code>arm64</code> + <code>x86_64</code>) and is certified for:
+        </p>
+        <ul>
+          <li><strong>Apple Silicon Hardware:</strong> Full native execution on Apple <strong>M1, M2, M3, M4, M5, and M6</strong> processors across all tier variants (Base, Pro, Max, and Ultra) utilizing native unified memory and Metal rendering pipelines without Rosetta 2 translation.</li>
+          <li><strong>Legacy Intel Hardware:</strong> 64-bit Intel Core i5, i7, and Xeon processors with AVX2 instruction support.</li>
+          <li><strong>macOS Operating System:</strong> macOS 12.0 (Monterey), macOS 13.0 (Ventura), macOS 14.0 (Sonoma), macOS 15.0 (Sequoia), up to and including the latest <strong>macOS 27.0+ (Golden Gate)</strong> releases.</li>
+        </ul>
+        <p>
+          ShieldBrowser does not support Windows, Linux, iOS, Android, or virtualized Hackintosh environments without native Metal display pipeline drivers.
+        </p>
+
+        <h2>2. Grant of Personal Software License</h2>
+        <p>
+          Conditioned upon your compliance with these Terms, ShieldBrowser grants you a revocable, non-exclusive, non-transferable, non-sublicensable, limited personal license to install and execute the Software on one (1) physical Mac hardware device.
+        </p>
+        <p>
+          This license is personal to you. You may not distribute copies of the Software to third parties, host the application bundle on public mirrors without written consent, or rent, lease, lend, or sublicense access to ShieldBrowser.
+        </p>
+
+        <h2>3. Cryptographic Hardware Binding (IOPlatformUUID)</h2>
+        <p>
+          To maintain fair single-user pricing and eliminate multi-seat credential piracy, each time-bound pass is cryptographically anchored to your physical Mac's hardware identifier (<code>IOPlatformUUID</code>).
+        </p>
+        <ul>
+          <li><strong>Single-Device Enforcement:</strong> An active pass is valid exclusively on the single physical Mac on which it was activated.</li>
+          <li><strong>Machine Upgrade Re-Binding:</strong> If you acquire a new Mac computer or replace your motherboard under AppleCare, you may submit a hardware re-binding request to our support desk (<a href="contact.html" style="color: var(--accent-emerald);">support@shieldbrowser.com</a>) with your original transaction identifier. Re-binding is processed within 2 business hours.</li>
+          <li><strong>Trial Reset Prevention:</strong> Attempts to manipulate macOS hardware serials or run virtual machine clones to reset the 5-minute complimentary hardware trial constitute a material violation of this agreement and will result in permanent hardware-level exclusion.</li>
+        </ul>
+
+        <h2>4. Non-Recurring Time-Bound Passes</h2>
+        <p>
+          ShieldBrowser operates on a transparent, <strong>strictly non-recurring time-bound pass model</strong>. We firmly reject predatory auto-renewing software subscriptions.
+        </p>
+        <ul>
+          <li><strong>Pass Durations:</strong> Passes are offered in increments of 24 Hours (86,400s), 3 Days (259,200s), 7 Days (604,800s), 1 Month (2,592,000s), 3 Months (7,776,000s), and 1 Year (31,536,000s).</li>
+          <li><strong>Automatic Expiration:</strong> When the duration of your active pass ends, the browser access cleanly lapses back to inactive state. Your credit card or UPI account will <strong>never</strong> be automatically charged or debited without your express manual authorization.</li>
+          <li><strong>Real-Time Countdown:</strong> The browser interface features a live cryptographic epoch countdown timer showing your exact remaining pass duration down to the second.</li>
+        </ul>
+
+        <h2>5. Complimentary 5-Minute Hardware Trial</h2>
+        <p>
+          Every physical Mac receives an automatic, unrestricted <strong>5-minute complimentary hardware test trial</strong> upon first launch. This trial is provided so that you can verify display server isolation, Ghost Mode, and audio/video behavior in a live test call on Zoom, Google Meet, Microsoft Teams, or Discord prior to purchasing any pass.
+        </p>
+        <p>
+          Participation in the complimentary trial does not obligate you to purchase a pass, nor does it require submission of payment credentials.
+        </p>
+
+        <h2>6. Display Server Compositor Isolation Scope</h2>
+        <p>
+          ShieldBrowser's core privacy capability relies on communicating with the native macOS Quartz Display Server using <code>CGWindowSharingType.none</code>. This instructs the operating system compositor to exclude the window buffer from screen capture pipelines.
+        </p>
+        <ul>
+          <li><strong>Intended Purposes:</strong> ShieldBrowser is engineered for private research, confidential documentation review, interview preparation, presentation note-taking, and sensitive web browsing during video conference calls.</li>
+          <li><strong>No Physical Shielding:</strong> ShieldBrowser isolates its window from video capture streams only; it cannot shield your physical screen from physical room cameras, over-the-shoulder human onlookers, or enterprise hardware-level HDMI/DisplayPort capture capture cards installed externally.</li>
+          <li><strong>Compliance Responsibility:</strong> You agree that you are solely responsible for ensuring that your usage of ShieldBrowser conforms to your employer's policies, academic institutional codes of conduct, and applicable local privacy regulations.</li>
+        </ul>
+
+        <h2>7. Prohibitions &amp; Anti-Tampering Protections</h2>
+        <p>
+          You agree not to engage in, attempt, or facilitate any of the following prohibited actions:
+        </p>
+        <ul>
+          <li>Decompiling, disassembling, reverse-engineering, or attempting to reconstruct the source code or cryptographic token verification routines of ShieldBrowser.</li>
+          <li>Patching, injecting dynamic libraries (<code>DYLD_INSERT_LIBRARIES</code>), or modifying binary code to bypass pass expiration or hardware UUID validation.</li>
+          <li>Distributing cracked, repacked, or modified <code>.dmg</code> bundles containing altered signatures or malicious payloads.</li>
+          <li>Using ShieldBrowser to conduct unauthorized penetration testing, denial-of-service attacks, illegal copyright infringement, or fraudulent financial activities.</li>
+        </ul>
+
+        <h2>8. Intellectual Property Rights</h2>
+        <p>
+          All right, title, and interest in and to ShieldBrowser—including its source code, compiled binaries, user interface designs, logos, graphics, visual assets, documentation, and algorithms—are the exclusive intellectual property of ShieldBrowser Technologies. All rights not expressly granted to you under these Terms are reserved.
+        </p>
+
+        <h2>9. Disclaimer of Warranties ("AS IS")</h2>
+        <p>
+          THE APPLICATION AND RELATED SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMISSIBLE UNDER APPLICABLE LAW, SHIELDBROWSER TECHNOLOGIES DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+        </p>
+        <p>
+          We do not warrant that the functions contained in the Software will meet your specific requirements, that operation will be completely uninterrupted or error-free, or that future third-party software updates (such as unannounced macOS kernel alterations) will not affect screen capture exclusion behavior.
+        </p>
+
+        <h2>10. Limitation of Liability</h2>
+        <p>
+          TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL SHIELDBROWSER TECHNOLOGIES, ITS DIRECTORS, ENGINEERS, OR PARTNERS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR IN CONNECTION WITH YOUR ACCESS TO OR USE OF (OR INABILITY TO USE) THE SOFTWARE.
+        </p>
+        <p>
+          IN NO EVENT SHALL OUR TOTAL AGGREGATE LIABILITY FOR ALL CLAIMS EXCEED THE ACTUAL AMOUNT PAID BY YOU FOR THE SPECIFIC TIME-BOUND PASS GIVING RISE TO THE CLAIM.
+        </p>
+
+        <h2>11. Termination</h2>
+        <p>
+          We reserve the right to revoke your license and terminate access to the Software immediately without prior notice if you materially breach any provision of these Terms, engage in automated trial exploitation, or attempt to reverse-engineer our hardware authentication protocol. Upon termination, you must cease all use of the Software and delete all copies from your Mac.
+        </p>
+
+        <h2>12. Governing Law &amp; Dispute Resolution</h2>
+        <p>
+          These Terms shall be governed by and construed in accordance with the laws of India, without regard to conflict of law principles. Any dispute, controversy, or claim arising out of or relating to these Terms or the breach thereof shall be resolved through good-faith negotiation, and if unresolved within thirty (30) days, through binding arbitration in accordance with the Arbitration and Conciliation Act.
+        </p>
+
+        <h2>13. Contact &amp; Legal Notices</h2>
+        <p>
+          If you have questions, comments, or legal notices concerning these Terms &amp; Conditions, please reach out to our legal and support team:
+        </p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:support@shieldbrowser.com" style="color: var(--accent-emerald);">support@shieldbrowser.com</a></li>
+          <li><strong>Contact Portal:</strong> <a href="contact.html" style="color: var(--accent-emerald);">ShieldBrowser Help Desk &amp; SLA</a></li>
+          <li><strong>Operating Entity:</strong> ShieldBrowser Technologies</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="assets/icons/app-icon.png" alt="ShieldBrowser" class="brand-logo-img">
+            <span class="brand-name">Shield<span>Browser</span></span>
+          </a>
+          <p>
+            The premier privacy browser for macOS engineered with native Quartz Window Server compositor isolation. 100% excluded from screen-sharing streams.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="download.html">Download .DMG</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal &amp; Merchant</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
+            <li><a href="shipping.html">Digital Goods Delivery</a></li>
+            <li><a href="contact.html">Contact Us &amp; SLA</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal-notice">
+          © 2026 ShieldBrowser Technologies. Universal macOS Binary (Apple Silicon M1–M6 &amp; Intel). All rights reserved.
+        </div>
+        <div class="system-status">
+          <span class="status-dot"></span>
+          <span>Verified Build v1.0.4 • macOS 27 Golden Gate Ready</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

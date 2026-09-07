@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="40%" stop-color="#111827"/>
+      <stop offset="70%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#040711"/>
+    </linearGradient>
+    <linearGradient id="orbGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#065f46" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="orbGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- macOS Wallpaper Canvas -->
+  <rect width="1200" height="700" fill="url(#wallGrad)"/>
+  <!-- Ambient glows -->
+  <circle cx="250" cy="180" r="280" fill="url(#orbGrad1)"/>
+  <circle cx="950" cy="500" r="320" fill="url(#orbGrad2)"/>
+
+  <!-- macOS Top Menu Bar -->
+  <rect width="1200" height="30" fill="#0c1017" fill-opacity="0.9"/>
+  <line x1="0" y1="30" x2="1200" y2="30" stroke="#1f293d" stroke-width="1"/>
+  <circle cx="22" cy="15" r="4.5" fill="#94a3b8"/>
+  <text x="40" y="19" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-weight="600" font-size="12">Code</text>
+  <text x="85" y="19" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="12">File</text>
+  <text x="120" y="19" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="12">Edit</text>
+  <text x="156" y="19" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="12">Selection</text>
+  <text x="220" y="19" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="12">View</text>
+  <text x="260" y="19" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="12">Terminal</text>
+  
+  <!-- Right Menu Bar Status -->
+  <text x="1060" y="19" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="12">Zoom Meeting Active (Sharing Desktop)</text>
+  <circle cx="1046" cy="15" r="4" fill="#22c55e"/>
+
+  <!-- Background Application: VS Code / Live Technical Interview -->
+  <g transform="translate(60, 60)">
+    <rect width="720" height="580" rx="10" fill="#141824" stroke="#252d42" stroke-width="1"/>
+    <!-- Window Bar -->
+    <rect width="720" height="38" rx="10" fill="#0f131d"/>
+    <circle cx="20" cy="19" r="6" fill="#ef4444"/>
+    <circle cx="38" cy="19" r="6" fill="#f59e0b"/>
+    <circle cx="56" cy="19" r="6" fill="#10b981"/>
+    <text x="360" y="23" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">solution.cpp — Live Interview Session (Zoom Screen Capture)</text>
+
+    <!-- Code Editor Content -->
+    <rect x="0" y="38" width="48" height="542" fill="#0c1017"/>
+    <text x="24" y="66" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">1</text>
+    <text x="24" y="88" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">2</text>
+    <text x="24" y="110" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">3</text>
+    <text x="24" y="132" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">4</text>
+    <text x="24" y="154" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">5</text>
+    <text x="24" y="176" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">6</text>
+    <text x="24" y="198" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">7</text>
+    <text x="24" y="220" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">8</text>
+    <text x="24" y="242" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">9</text>
+    <text x="24" y="264" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">10</text>
+    <text x="24" y="286" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">11</text>
+    <text x="24" y="308" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">12</text>
+
+    <!-- Code Syntax -->
+    <text x="65" y="66" fill="#93c5fd" font-family="'JetBrains Mono', monospace" font-size="12">#include &lt;iostream&gt;</text>
+    <text x="65" y="88" fill="#93c5fd" font-family="'JetBrains Mono', monospace" font-size="12">#include &lt;vector&gt;</text>
+    <text x="65" y="110" fill="#f43f5e" font-family="'JetBrains Mono', monospace" font-size="12">using namespace std;</text>
+    <text x="65" y="154" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="12">int <tspan fill="#facc15">findMedianSortedArrays</tspan>(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) {</text>
+    <text x="85" y="176" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="12">// Binary Search partition logic across two sorted arrays</text>
+    <text x="85" y="198" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="12">int m = nums1.size(), n = nums2.size();</text>
+    <text x="85" y="220" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="12">if (m &gt; n) return findMedianSortedArrays(nums2, nums1);</text>
+    <text x="85" y="250" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="12">int low = 0, high = m;</text>
+    <text x="85" y="272" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="12">while (low &lt;= high) {</text>
+    <text x="105" y="294" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">int partitionX = (low + high) / 2;</text>
+    <text x="105" y="316" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">int partitionY = (m + n + 1) / 2 - partitionX;</text>
+    <text x="85" y="338" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="12">}</text>
+  </g>
+
+  <!-- Zoom Meeting Video Floating Tile (Right Corner) -->
+  <g transform="translate(820, 60)">
+    <rect width="320" height="240" rx="10" fill="#181c28" stroke="#252d42" stroke-width="1"/>
+    <rect width="320" height="30" rx="10" fill="#0f131d"/>
+    <text x="15" y="20" fill="#22c55e" font-family="-apple-system, sans-serif" font-weight="600" font-size="11">● LIVE: Zoom Interview Call</text>
+    <!-- Avatar / Mock Interviewer -->
+    <circle cx="160" cy="115" r="45" fill="#2d3748"/>
+    <circle cx="160" cy="100" r="20" fill="#cbd5e1"/>
+    <path d="M125 150C125 130 140 125 160 125C180 125 195 130 195 150Z" fill="#cbd5e1"/>
+    <rect x="20" y="195" width="280" height="24" rx="4" fill="#0d111a" fill-opacity="0.8"/>
+    <text x="30" y="211" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="10">Interviewer: "Walk me through line 10..."</text>
+  </g>
+
+  <!-- Bottom Dock Mockup -->
+  <g transform="translate(420, 645)">
+    <rect width="360" height="50" rx="16" fill="#0d111a" fill-opacity="0.8" stroke="#252d42" stroke-width="1"/>
+    <circle cx="50" cy="25" r="16" fill="#3b82f6"/>
+    <circle cx="100" cy="25" r="16" fill="#10b981"/>
+    <circle cx="150" cy="25" r="16" fill="#f59e0b"/>
+    <circle cx="200" cy="25" r="16" fill="#6366f1"/>
+    <circle cx="250" cy="25" r="16" fill="#ec4899"/>
+    <circle cx="300" cy="25" r="16" fill="#22c55e"/>
+    <!-- Running dot under ShieldBrowser -->
+    <circle cx="300" cy="45" r="2" fill="#22c55e"/>
+  </g>
+</svg>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Engineering Features — ShieldBrowser macOS Architecture</title>
+  <meta name="title" content="Engineering Features — ShieldBrowser macOS Architecture">
+  <meta name="description" content="Explore the deep engineering behind ShieldBrowser: native Quartz Window Server compositor isolation, WebKit performance, sub-10ms panic keys, and hardware UUID binding.">
+  <meta name="keywords" content="quartz window server isolation, cgwindowsharingtype none, private mac browser features, stealth webkit browser, apple silicon interview browser">
+  <link rel="canonical" href="https://shieldbrowser.com/features">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shieldbrowser.com/features">
+  <meta property="og:title" content="Engineering Features — ShieldBrowser macOS Architecture">
+  <meta property="og:description" content="Technical deep-dive into macOS compositor isolation, WebKit rendering, and zero-log architecture.">
+  <meta property="og:image" content="assets/images/og-preview.svg">
+
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <link rel="apple-touch-icon" href="assets/icons/app-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .features-hero {
+      padding: 140px 0 60px 0;
+      text-align: center;
+    }
+    .deep-dive-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .deep-dive-visual {
+      background: #090c13;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #38bdf8;
+      line-height: 1.6;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+    .feature-point {
+      margin-bottom: 16px;
+    }
+    .feature-point h3 {
+      color: #ffffff;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .feature-point p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    @media (max-width: 992px) {
+      .deep-dive-card {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="cyber-grid">
+
+  <!-- Fixed Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/icons/app-icon.png" alt="ShieldBrowser Logo" class="brand-logo-img">
+        <span class="brand-name">Shield<span>Browser</span></span>
+        <span class="version-pill">v1.0.4</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#demo" class="nav-link">Live Demo</a></li>
+          <li><a href="features.html" class="nav-link active">Features</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+          <li><a href="download.html" class="nav-link">Download</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="downloads/ShieldBrowser-v1.0.4.dmg" class="nav-download-btn btn-shimmer" download>
+          <img src="assets/icons/apple-icon.svg" alt="Apple" style="width: 14px; height: 14px;">
+          <span>Download .DMG</span>
+        </a>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="features.html" class="nav-link">Features</a>
+    <a href="pricing.html" class="nav-link">Pricing</a>
+    <a href="how-it-works.html" class="nav-link">How It Works</a>
+    <a href="download.html" class="nav-link">Download</a>
+  </div>
+
+  <main>
+    <section class="features-hero">
+      <div class="container">
+        <div class="section-tag">Kernel-Grade Discretion</div>
+        <h1 class="section-title">Deep Technical <span class="highlight">Architecture</span></h1>
+        <p class="section-subtitle">
+          How ShieldBrowser achieves hardware-isolated stealth without proxies, virtual machines, or detection flags.
+        </p>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- 1. Quartz Compositor Isolation -->
+      <div class="deep-dive-card tilt-card">
+        <div class="feature-point">
+          <div class="section-tag" style="margin-bottom: 10px;">Core Innovation</div>
+          <h3>Apple Quartz Window Server Isolation</h3>
+          <p>
+            Standard screen capture software (Zoom, Google Meet, Teams, OBS) queries the macOS Window Server for pixel frame buffers. ShieldBrowser explicitly instructs the compositor with <code>CGWindowSharingType.none</code>.
+          </p>
+          <p style="margin-top: 10px;">
+            The operating system physically omits ShieldBrowser from any display stream. When viewers receive your screen, your wallpaper or background code editor is shown with zero trace or black boxes.
+          </p>
+        </div>
+        <div class="deep-dive-visual">
+          <span style="color: #64748b;">// Native Swift Window Server Binding</span><br>
+          <span style="color: #c084fc;">if let</span> window = <span style="color: #38bdf8;">self</span>.window {<br>
+          &nbsp;&nbsp;window.sharingType = <span style="color: #22c55e;">.none</span><br>
+          &nbsp;&nbsp;window.collectionBehavior = [<span style="color: #22c55e;">.canJoinAllSpaces</span>, <span style="color: #22c55e;">.fullScreenAuxiliary</span>]<br>
+          &nbsp;&nbsp;window.level = <span style="color: #22c55e;">.floating</span><br>
+          }<br>
+          <span style="color: #34d399;">✓ Compositor stream exclusion: ACTIVE</span><br>
+          <span style="color: #34d399;">✓ Screen recording footprint: 0 BINDINGS</span>
+        </div>
+      </div>
+
+      <!-- 2. WebKit vs Chromium -->
+      <div class="deep-dive-card tilt-card">
+        <div class="feature-point">
+          <div class="section-tag" style="margin-bottom: 10px;">Speed &amp; Efficiency</div>
+          <h3>Safari-Grade WebKit Engine</h3>
+          <p>
+            Most third-party browsers bundle Chromium or Electron, consuming 1.5+ GB of RAM and causing fans to spin up during video calls. ShieldBrowser is built purely on Apple's native <strong>WebKit framework</strong>.
+          </p>
+          <p style="margin-top: 10px;">
+            It launches in under 200 milliseconds, uses less than 85 MB of memory at idle, and offers complete compatibility with Google, LeetCode, GitHub, ChatGPT, and documentation portals.
+          </p>
+        </div>
+        <div class="deep-dive-visual">
+          <span style="color: #64748b;">// Performance Benchmark</span><br>
+          RAM Usage (Idle): &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #22c55e;">84 MB</span> (ShieldBrowser)<br>
+          RAM Usage (Electron): &nbsp;&nbsp;<span style="color: #f43f5e;">1,420 MB</span> (Other Tools)<br>
+          Cold Startup Time: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #22c55e;">180 ms</span><br>
+          Binary Size: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #22c55e;">1.1 MB</span><br>
+          Apple Silicon Support: &nbsp;<span style="color: #38bdf8;">ARM64 Native (M1–M6 Ready)</span>
+        </div>
+      </div>
+
+      <!-- 3. Dynamic Opacity & Panic Key -->
+      <div class="deep-dive-card tilt-card">
+        <div class="feature-point">
+          <div class="section-tag" style="margin-bottom: 10px;">Real-Time Controls</div>
+          <h3>Dynamic Opacity &amp; &lt;10ms Panic Key</h3>
+          <p>
+            Hover ShieldBrowser over your coding environment without switching desktop spaces. Drag the top toolbar slider to drop opacity down to 10% so you can read both your interview prompt and solution simultaneously.
+          </p>
+          <p style="margin-top: 10px;">
+            If someone approaches your desk or asks you to click on something unexpected, hitting <code>Escape</code> or <code>⌘H</code> instantly vanishes the window from your screen in under 10 milliseconds.
+          </p>
+        </div>
+        <div class="deep-dive-visual">
+          <span style="color: #64748b;">// Instant Hotkey Listeners</span><br>
+          Key: <span style="color: #fbbf24;">Escape</span> &rarr; Instant Minimize / Hide (&lt;10ms)<br>
+          Key: <span style="color: #fbbf24;">⌘H</span> &rarr; Hide Application<br>
+          Key: <span style="color: #fbbf24;">⌘T</span> &rarr; New Stealth Tab<br>
+          Key: <span style="color: #fbbf24;">⌘L</span> &rarr; Focus Omnibox / Search<br>
+          Opacity Range: <span style="color: #22c55e;">10% — 100% Alpha</span>
+        </div>
+      </div>
+
+      <!-- 4. Zero-Logs Architecture -->
+      <div class="deep-dive-card tilt-card">
+        <div class="feature-point">
+          <div class="section-tag" style="margin-bottom: 10px;">Privacy Guarantee</div>
+          <h3>Strict Zero-Logs Sandboxing</h3>
+          <p>
+            Your browsing history, session cookies, tabs, and credentials remain solely inside your computer's local macOS sandbox container (<code>~/Library/Containers/com.shieldbrowser.app</code>).
+          </p>
+          <p style="margin-top: 10px;">
+            ShieldBrowser has zero analytics trackers, zero telemetry logging, and zero remote history synchronization. When you clear your session or close the app, your footprints are permanently gone.
+          </p>
+        </div>
+        <div class="deep-dive-visual">
+          <span style="color: #64748b;">// Local Sandboxed Container</span><br>
+          Data Storage: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #22c55e;">Local Disk Only</span><br>
+          Remote History Logging: <span style="color: #22c55e;">DISABLED (0 Bytes)</span><br>
+          Third-Party Trackers: &nbsp;&nbsp;<span style="color: #22c55e;">ZERO</span><br>
+          Cloud Synchronization: &nbsp;<span style="color: #22c55e;">NONE</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="assets/icons/app-icon.png" alt="ShieldBrowser" class="brand-logo-img">
+            <span class="brand-name">Shield<span>Browser</span></span>
+          </a>
+          <p>The premier privacy browser for macOS engineered with native Quartz Window Server compositor isolation.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing Passes</a></li>
+            <li><a href="download.html">Download Center</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Engineering</h4>
+          <ul class="footer-links">
+            <li><a href="features.html">Quartz Compositor</a></li>
+            <li><a href="how-it-works.html">Display Architecture</a></li>
+            <li><a href="download.html#gatekeeper">Gatekeeper Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal-notice">© 2026 ShieldBrowser Technologies. All rights reserved.</div>
+        <div class="system-status"><span class="status-dot"></span><span>macOS 27 Golden Gate Ready</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

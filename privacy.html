@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Privacy Policy — ShieldBrowser Zero-Logs Architecture</title>
+  <meta name="description" content="ShieldBrowser strict Zero-Logs privacy policy. No remote tracking, no telemetry, local sandboxed WebKit storage, and cryptographic hardware UUID binding.">
+  <link rel="canonical" href="https://shieldbrowser.com/privacy">
+
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <link rel="apple-touch-icon" href="assets/icons/app-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .legal-content {
+      padding: 130px 0 80px 0;
+      max-width: 880px;
+    }
+    .legal-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 52px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .legal-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-emerald);
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .legal-card h1 {
+      color: #ffffff;
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .legal-date {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .legal-card h2 {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 36px 0 14px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .legal-card h3 {
+      color: #e2e8f0;
+      font-size: 16px;
+      font-weight: 600;
+      margin: 20px 0 8px 0;
+    }
+    .legal-card p, .legal-card li {
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+    }
+    .legal-card strong {
+      color: #ffffff;
+    }
+    .legal-card ul {
+      margin-left: 24px;
+      margin-bottom: 18px;
+    }
+    .legal-highlight-box {
+      background: rgba(34, 197, 94, 0.06);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin: 24px 0;
+    }
+    .legal-highlight-box p {
+      margin-bottom: 0;
+      color: #d1fae5;
+    }
+  </style>
+</head>
+<body class="cyber-grid">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/icons/app-icon.png" alt="ShieldBrowser Logo" class="brand-logo-img">
+        <span class="brand-name">Shield<span>Browser</span></span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="features.html" class="nav-link">Features</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+          <li><a href="download.html" class="nav-link">Download</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="downloads/ShieldBrowser-v1.0.4.dmg" class="nav-download-btn" download>Download .DMG</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container legal-content">
+      <div class="legal-card">
+        <div class="legal-badge">Zero-Logs Engineering Commitment</div>
+        <h1>Privacy Policy</h1>
+        <div class="legal-date">Last Updated &amp; Effective: September 7, 2026 • Version 1.0.4</div>
+
+        <p>
+          At <strong>ShieldBrowser Technologies</strong>, privacy is not a decorative marketing slogan—it is the foundational engineering principle upon which our software is architected. We build tools for professionals, interviewees, researchers, and creators who demand ironclad confidentiality.
+        </p>
+        <p>
+          This Privacy Policy explains the strict boundaries of data handling in the ShieldBrowser macOS application and website. We operate on a verified <strong>Zero-Logs Architecture</strong>: we do not monitor, log, sell, monetize, or transmit your web browsing activities.
+        </p>
+
+        <div class="legal-highlight-box">
+          <p>
+            <strong>Core Privacy Principle:</strong> What you browse, search, or type in ShieldBrowser remains solely in your physical Mac's RAM and sandboxed local disk. Our servers never receive your URLs, search queries, page contents, session cookies, or keystrokes.
+          </p>
+        </div>
+
+        <h2>1. Zero Browsing Telemetry &amp; Local Sandboxing</h2>
+        <p>
+          ShieldBrowser uses Apple's native <strong>WebKit engine</strong> running inside an isolated macOS application sandbox container (<code>~/Library/Containers/com.shieldbrowser.app</code>).
+        </p>
+        <ul>
+          <li><strong>Zero Remote History:</strong> Your browsing history, open tabs, bookmarks, and form inputs are written exclusively to local APFS SQLite storage on your physical disk. They are never synchronized to any cloud server.</li>
+          <li><strong>Zero Keylogging:</strong> ShieldBrowser does not contain any keylogging, screen recording, or keystroke telemetry libraries. Keystrokes are delivered directly to the focused webpage by the macOS Window Server.</li>
+          <li><strong>Isolated Memory Pools:</strong> Session data, decrypted TLS web sockets, and DOM nodes reside in memory pools that are cleared and released by the operating system the moment you close a tab or quit the app.</li>
+        </ul>
+
+        <h2>2. Technical Data Processed for License Provisioning</h2>
+        <p>
+          To maintain single-device pass validation, prevent multi-seat credential reselling, and support pass transfers when you upgrade your Mac, we collect only the absolute bare minimum technical metadata:
+        </p>
+        <ul>
+          <li><strong>One-Way Cryptographic Hardware Hash:</strong> A salted SHA-256 hash of your Mac's hardware identifier (<code>IOPlatformUUID</code>). The raw serial number is never transmitted or stored in plain text.</li>
+          <li><strong>Payment Transaction Identifier:</strong> A unique numerical transaction reference generated by our payment processing partner (e.g., Razorpay/Cashfree/Stripe) upon successful in-app UPI or Card checkout.</li>
+          <li><strong>Pass Expiration Timestamp:</strong> The unix epoch timestamp denoting when your purchased time-bound pass (e.g., 24 Hours, 7 Days, 1 Year) automatically expires.</li>
+        </ul>
+        <p>
+          This metadata is used exclusively to cryptographically unlock the browser on your machine. It cannot be used to deduce your identity, location, or online activities.
+        </p>
+
+        <h2>3. Zero Third-Party Analytics or Ad Trackers</h2>
+        <p>
+          Unlike conventional consumer browsers:
+        </p>
+        <ul>
+          <li>ShieldBrowser contains <strong>ZERO Google Analytics, Firebase Analytics, Mixpanel, or Facebook Pixel SDKs</strong> inside the application bundle.</li>
+          <li>We do not partner with data brokers, ad networks, or telemetry monetization vendors.</li>
+          <li>Our website utilizes privacy-respecting, cookieless server-side performance metrics solely to monitor bandwidth and CDN uptime.</li>
+        </ul>
+
+        <h2>4. Screen Share Shielding Architecture &amp; Privacy</h2>
+        <p>
+          ShieldBrowser achieves complete invisibility during screen shares through the native macOS Quartz Window Server instruction <code>CGWindowSharingType.none</code>.
+        </p>
+        <ul>
+          <li><strong>Local Compositor Processing:</strong> Window exclusion occurs at the low-level Display Server graphics pipeline inside your Mac's GPU/display buffer.</li>
+          <li><strong>Zero Network Capture Interception:</strong> ShieldBrowser does not intercept, modify, or inspect the network traffic of Zoom, Google Meet, Microsoft Teams, Discord, Slack, or OBS. It simply instructs macOS not to write the browser's surface pixels into screen capture buffers.</li>
+        </ul>
+
+        <h2>5. Gemini AI Screen Analysis Privacy (⌘ + Shift + G)</h2>
+        <p>
+          ShieldBrowser offers an optional, on-demand AI screen assistant powered by the Google Gemini API:
+        </p>
+        <ul>
+          <li><strong>Explicit On-Demand Trigger Only:</strong> The AI assistant operates <em>strictly</em> when you manually press the hotkey <code>⌘ + Shift + G</code>. It is completely inert and dormant during normal browsing.</li>
+          <li><strong>No Passive Listening or Recording:</strong> ShieldBrowser never runs background microphones, cameras, or passive screen watchers.</li>
+          <li><strong>Ephemeral Processing:</strong> When triggered, a secure, end-to-end TLS 1.3 encrypted API payload containing the active viewport context is evaluated. Context is processed in transient memory and is immediately discarded. It is not used for model retraining.</li>
+        </ul>
+
+        <h2>6. In-App Payment Security &amp; PCI-DSS Compliance</h2>
+        <p>
+          All pass activations occur natively inside the ShieldBrowser application through licensed, RBI-approved, and PCI-DSS Level 1 certified payment gateways:
+        </p>
+        <ul>
+          <li><strong>UPI Payments:</strong> Seamlessly generated dynamic UPI QR codes and intent links (Google Pay, PhonePe, Paytm, CRED). No banking PINs or credentials ever touch our application.</li>
+          <li><strong>Card Payments:</strong> 3D-Secure 2.0 encrypted checkout. ShieldBrowser never sees, transmits, or stores your 16-digit card number, expiration date, or CVV.</li>
+          <li><strong>Zero Recurring Auto-Debits:</strong> Because passes are non-recurring, your payment details are not saved for stealth recurring debits.</li>
+        </ul>
+
+        <h2>7. Data Retention &amp; Right to Erasure (GDPR &amp; CCPA)</h2>
+        <p>
+          In accordance with global privacy frameworks, including the General Data Protection Regulation (GDPR) and California Consumer Privacy Act (CCPA):
+        </p>
+        <ul>
+          <li><strong>Automatic Expiration Purge:</strong> Hardware UUID licensing hashes are automatically purged from our authentication databases 30 days after pass expiration.</li>
+          <li><strong>Immediate Erasure Request:</strong> You may request complete, immediate deletion of your transaction record and hardware hash at any time by emailing <a href="mailto:support@shieldbrowser.com" style="color: var(--accent-emerald);">support@shieldbrowser.com</a>. All records will be permanently purged within <strong>48 hours</strong>.</li>
+        </ul>
+
+        <h2>8. Cryptographic Security Standards</h2>
+        <p>
+          We implement rigorous security controls to protect the integrity of our software:
+        </p>
+        <ul>
+          <li><strong>Transport Layer Security:</strong> All client-to-licensing API communications are encrypted using TLS 1.3 with forward secrecy.</li>
+          <li><strong>Code Signing &amp; SHA-256 Verification:</strong> The official distribution <code>.dmg</code> is cryptographically hashed with SHA-256 to ensure zero tampering during transit.</li>
+        </ul>
+
+        <h2>9. Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time to reflect evolving legal frameworks or software enhancements. Any modifications will be posted to this URL with an updated Effective Date. Your continued use of ShieldBrowser after any update constitutes acceptance of the revised terms.
+        </p>
+
+        <h2>10. Data Protection Officer &amp; Contact Information</h2>
+        <p>
+          For privacy inquiries, audit verifications, or erasure requests, please contact our dedicated Data Protection Officer:
+        </p>
+        <ul>
+          <li><strong>Privacy Office Email:</strong> <a href="mailto:support@shieldbrowser.com" style="color: var(--accent-emerald);">support@shieldbrowser.com</a></li>
+          <li><strong>Direct Support Portal:</strong> <a href="contact.html" style="color: var(--accent-emerald);">Contact Us &amp; SLA</a></li>
+          <li><strong>Entity:</strong> ShieldBrowser Technologies</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="assets/icons/app-icon.png" alt="ShieldBrowser" class="brand-logo-img">
+            <span class="brand-name">Shield<span>Browser</span></span>
+          </a>
+          <p>
+            The premier privacy browser for macOS engineered with native Quartz Window Server compositor isolation. 100% excluded from screen-sharing streams.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="download.html">Download .DMG</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal &amp; Merchant</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
+            <li><a href="shipping.html">Digital Goods Delivery</a></li>
+            <li><a href="contact.html">Contact Us &amp; SLA</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal-notice">
+          © 2026 ShieldBrowser Technologies. Zero-Logs Architecture. All rights reserved.
+        </div>
+        <div class="system-status">
+          <span class="status-dot"></span>
+          <span>Verified Build v1.0.4 • macOS 27 Golden Gate Ready</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

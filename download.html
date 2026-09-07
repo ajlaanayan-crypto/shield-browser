@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Download ShieldBrowser for Mac — Universal macOS DMG Installer</title>
+  <meta name="title" content="Download ShieldBrowser for Mac — Universal macOS DMG Installer">
+  <meta name="description" content="Download official ShieldBrowser v1.0.4 for macOS. Universal binary for Apple Silicon (M1, M2, M3, M4, M5, M6) & Intel Macs. Verified SHA-256 checksum & Gatekeeper assistance guide.">
+  <meta name="keywords" content="download shieldbrowser mac, shieldbrowser dmg, invisible browser download, stealth browser macos installer, quartz browser download">
+  <link rel="canonical" href="https://shieldbrowser.com/download">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shieldbrowser.com/download">
+  <meta property="og:title" content="Download ShieldBrowser for Mac — Universal macOS DMG Installer">
+  <meta property="og:description" content="Download official ShieldBrowser v1.0.4 for macOS. Universal binary for Apple Silicon M1–M6 & Intel Macs.">
+  <meta property="og:image" content="assets/images/og-preview.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <link rel="apple-touch-icon" href="assets/icons/app-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .download-hero {
+      padding: 140px 0 60px 0;
+      text-align: center;
+    }
+    .installer-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: left;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(34, 197, 94, 0.12);
+      border-color: rgba(34, 197, 94, 0.35);
+    }
+    .installer-header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .installer-icon {
+      width: 76px;
+      height: 76px;
+      border-radius: 18px;
+      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 16px rgba(34, 197, 94, 0.35));
+    }
+    .installer-meta {
+      flex: 1;
+    }
+    .installer-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-bottom: 6px;
+    }
+    .installer-sub {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    .installer-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      background: #090c13;
+      padding: 20px;
+      border-radius: var(--radius-md);
+      margin-bottom: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .spec-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .spec-val {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-white);
+    }
+    .checksum-box {
+      background: #080a10;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .checksum-text {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-emerald);
+      word-break: break-all;
+    }
+    .gatekeeper-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .gk-tab {
+      padding: 10px 18px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: #0c0f17;
+      border: 1px solid var(--border-subtle);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .gk-tab.active {
+      background: var(--bg-surface-elevated);
+      color: var(--accent-emerald);
+      border-color: var(--accent-emerald);
+    }
+    .gk-panel {
+      display: none;
+      background: #090c13;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 40px;
+    }
+    .gk-panel.active {
+      display: block;
+    }
+    .terminal-code-block {
+      background: #040609;
+      border: 1px solid #1f283d;
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body class="cyber-grid">
+
+  <!-- Fixed Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img src="assets/icons/app-icon.png" alt="ShieldBrowser Logo" class="brand-logo-img">
+        <span class="brand-name">Shield<span>Browser</span></span>
+        <span class="version-pill">v1.0.4</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#demo" class="nav-link">Live Demo</a></li>
+          <li><a href="features.html" class="nav-link">Features</a></li>
+          <li><a href="index.html#shortcuts" class="nav-link">Shortcuts</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+          <li><a href="download.html" class="nav-link active">Download</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="downloads/ShieldBrowser-v1.0.4.dmg" class="nav-download-btn btn-shimmer" download>
+          <img src="assets/icons/apple-icon.svg" alt="Apple" style="width: 14px; height: 14px;">
+          <span>Download .DMG</span>
+        </a>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="features.html" class="nav-link">Features</a>
+    <a href="pricing.html" class="nav-link">Pricing</a>
+    <a href="how-it-works.html" class="nav-link">How It Works</a>
+    <a href="downloads/ShieldBrowser-v1.0.4.dmg" class="btn btn-primary" download style="margin-top: 10px;">
+      <span> Download ShieldBrowser-v1.0.4.dmg</span>
+    </a>
+  </div>
+
+  <main>
+    <section class="download-hero">
+      <div class="container">
+        <div class="section-tag">Official Distribution Hub</div>
+        <h1 class="section-title">Download <span class="highlight">ShieldBrowser for Mac</span></h1>
+        <p class="section-subtitle">
+          Universal binary for Apple Silicon (M1, M2, M3, M4, M5, M6) &amp; Intel Core Macs • Verified up to macOS 27 Golden Gate. Includes 5-minute complimentary hardware trial.
+        </p>
+
+        <!-- Main Installer Box -->
+        <div class="installer-card tilt-card">
+          <div class="installer-header">
+            <img src="assets/icons/app-icon.png" alt="ShieldBrowser App Icon" class="installer-icon">
+            <div class="installer-meta">
+              <h2 class="installer-title">ShieldBrowser-v1.0.4.dmg</h2>
+              <p class="installer-sub">Universal macOS Application Bundle • Version 1.0.4</p>
+            </div>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <a href="downloads/ShieldBrowser-v1.0.4.dmg" class="btn btn-primary btn-lg btn-shimmer" download id="btn-download-dmg">
+                <img src="assets/icons/apple-icon.svg" alt="Apple" class="btn-icon" style="filter: brightness(0);">
+                <span>Download .DMG (2.3 MB)</span>
+              </a>
+              <a href="https://www.mediafire.com/file/0jfihittclvhhkl/ShieldBrowser-v1.0.4.dmg/file" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg" style="font-size: 14px;">
+                <span>🌐 MediaFire Mirror ↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Specifications Grid -->
+          <div class="installer-specs-grid">
+            <div class="spec-item">
+              <span class="spec-label">Architecture</span>
+              <span class="spec-val">Universal arm64 + x86_64 (M1–M6 &amp; Intel)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">File Size</span>
+              <span class="spec-val">2.3 MB Compressed</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Compatibility</span>
+              <span class="spec-val">macOS 12.0 — 27.0+ Golden Gate</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Engine</span>
+              <span class="spec-val">Apple WebKit Core</span>
+            </div>
+          </div>
+
+          <!-- SHA-256 Checksum -->
+          <div class="checksum-box">
+            <div>
+              <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px;">Verified SHA-256 Checksum</div>
+              <div class="checksum-text" id="checksum-display">32bcd7327ebd4f44de15e9a3bc643a1f34604064362eaca860e002741a77083b</div>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-copy-checksum" data-checksum="32bcd7327ebd4f44de15e9a3bc643a1f34604064362eaca860e002741a77083b">
+              <span>Copy Hash</span>
+            </button>
+          </div>
+
+          <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
+            <strong>ℹ️ Complimentary Trial:</strong> Your first launch gives you 5 minutes of unrestricted hardware testing on Zoom, Google Meet, or Teams. All passes are activated directly inside the app with zero website redirects.
+          </div>
+        </div>
+
+        <!-- Gatekeeper Assistance Section -->
+        <div class="container" style="max-width: 800px; text-align: left; margin-top: 60px;" id="gatekeeper">
+          <div class="section-tag" style="margin-bottom: 12px;">macOS Security</div>
+          <h2 style="font-size: 26px; font-weight: 700; color: #ffffff; margin-bottom: 12px;">
+            First-Time Launch &amp; Gatekeeper Assistance
+          </h2>
+          <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.6;">
+            Because ShieldBrowser communicates directly with low-level Apple Quartz Compositor APIs (<code>CGWindowSharingType.none</code>), macOS Gatekeeper may show a standard verification dialog upon first opening. Choose any of these 3 easy methods to launch:
+          </p>
+
+          <!-- Gatekeeper Method Tabs -->
+          <div class="gatekeeper-tabs">
+            <button class="gk-tab active" onclick="switchGkTab('gk-tab-1', this)">Method 1: Right-Click Open (Recommended)</button>
+            <button class="gk-tab" onclick="switchGkTab('gk-tab-2', this)">Method 2: System Settings</button>
+            <button class="gk-tab" onclick="switchGkTab('gk-tab-3', this)">Method 3: Terminal Command</button>
+          </div>
+
+          <!-- Tab Panel 1 -->
+          <div class="gk-panel active" id="gk-tab-1">
+            <h3 style="color: #ffffff; font-size: 16px; margin-bottom: 10px;">Quickest 2-Click Method</h3>
+            <ol style="margin-left: 20px; color: var(--text-secondary); font-size: 14px; line-height: 1.8;">
+              <li>In Finder, navigate to your <strong>/Applications</strong> folder.</li>
+              <li>Right-click (or Control-click) on <strong>ShieldBrowser.app</strong> and choose <strong>Open</strong>.</li>
+              <li>When the confirmation popup appears, click <strong>Open</strong>. You will only need to do this once.</li>
+            </ol>
+          </div>
+
+          <!-- Tab Panel 2 -->
+          <div class="gk-panel" id="gk-tab-2">
+            <h3 style="color: #ffffff; font-size: 16px; margin-bottom: 10px;">Via macOS System Settings</h3>
+            <ol style="margin-left: 20px; color: var(--text-secondary); font-size: 14px; line-height: 1.8;">
+              <li>Open <strong>System Settings</strong> from your Apple menu.</li>
+              <li>Click <strong>Privacy &amp; Security</strong> in the sidebar.</li>
+              <li>Scroll down to the <strong>Security</strong> section.</li>
+              <li>Click <strong>Open Anyway</strong> next to the ShieldBrowser notification.</li>
+            </ol>
+          </div>
+
+          <!-- Tab Panel 3 -->
+          <div class="gk-panel" id="gk-tab-3">
+            <h3 style="color: #ffffff; font-size: 16px; margin-bottom: 10px;">Terminal One-Liner (Power Users)</h3>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 8px;">
+              Remove the quarantine attribute in one command:
+            </p>
+            <div class="terminal-code-block">
+              <span>xattr -cr /Applications/ShieldBrowser.app</span>
+              <button class="btn btn-secondary btn-sm" onclick="navigator.clipboard.writeText('xattr -cr /Applications/ShieldBrowser.app'); alert('Command copied!');">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <img src="assets/icons/app-icon.png" alt="ShieldBrowser" class="brand-logo-img">
+            <span class="brand-name">Shield<span>Browser</span></span>
+          </a>
+          <p>
+            The premier privacy browser for macOS engineered with native Quartz Window Server compositor isolation.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing Passes</a></li>
+            <li><a href="download.html">Download Center</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Engineering</h4>
+          <ul class="footer-links">
+            <li><a href="features.html">Quartz Compositor</a></li>
+            <li><a href="how-it-works.html">Display Architecture</a></li>
+            <li><a href="download.html#gatekeeper">Gatekeeper Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal &amp; Merchant</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-legal-notice">
+          © 2026 ShieldBrowser Technologies. Universal macOS Binary (Apple Silicon M1–M6 &amp; Intel).
+        </div>
+        <div class="system-status">
+          <span class="status-dot"></span>
+          <span>Verified Build v1.0.4 • macOS 27 Golden Gate Ready</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function switchGkTab(panelId, btn) {
+      document.querySelectorAll('.gk-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.gk-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const target = document.getElementById(panelId);
+      if (target) target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
