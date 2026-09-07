@@ -1,0 +1,219 @@
+/**
+ * ShieldBrowser — 3D Motion, Parallax & Modern Scroll Animations
+ */
+
+/* Pulse Glow Keyframe */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 10px var(--accent-emerald);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.92);
+    box-shadow: 0 0 4px var(--accent-emerald);
+  }
+}
+
+/* Subtle Float Keyframe */
+@keyframes subtle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+/* ============================================================
+   Buttery-Smooth Hardware-Accelerated Interactive Cards
+   (Zero Jitter, 120Hz Smoothness, No Transform Glitches)
+   ============================================================ */
+.tilt-card {
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.25s ease, 
+              background-color 0.25s ease;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  transform: translateY(0) translateZ(0);
+}
+
+.tilt-card:hover {
+  transform: translateY(-5px) translateZ(0);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.75), 0 0 24px -2px rgba(34, 197, 94, 0.22);
+  border-color: rgba(34, 197, 94, 0.45);
+}
+
+/* Ambient Radial Cursor Spotlight Sheen */
+.tilt-card::before,
+.feature-card::before,
+.pricing-card::before,
+.step-card::before,
+.compat-card::before,
+.tutorial-card::before,
+.deep-dive-card::before,
+.pipeline-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    400px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+    rgba(34, 197, 94, 0.14),
+    transparent 75%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.tilt-card:hover::before,
+.feature-card:hover::before,
+.pricing-card:hover::before,
+.step-card:hover::before,
+.compat-card:hover::before,
+.tutorial-card:hover::before,
+.deep-dive-card:hover::before,
+.pipeline-card:hover::before {
+  opacity: 1;
+}
+
+/* Inner elements stay above the ambient light sheen */
+.tilt-card > *,
+.feature-card > *,
+.pricing-card > *,
+.step-card > *,
+.compat-card > *,
+.tutorial-card > *,
+.deep-dive-card > *,
+.pipeline-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Stable containers that remain rock-solid without layout jumps */
+.shortcut-table-card,
+.simulator-wrapper,
+.comparison-table-wrapper,
+.installer-card,
+.legal-card,
+.contact-form-card,
+.contact-info-card {
+  transform: none !important;
+}
+
+.shortcut-table-card:hover,
+.simulator-wrapper:hover,
+.comparison-table-wrapper:hover,
+.installer-card:hover,
+.legal-card:hover,
+.contact-form-card:hover,
+.contact-info-card:hover {
+  transform: none !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+/* Scroll-Driven Animations: Modern Baseline CSS Implementation */
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes parallax-depth {
+  from {
+    transform: translateY(60px) translateZ(-40px);
+  }
+  to {
+    transform: translateY(-30px) translateZ(0px);
+  }
+}
+
+/* Scroll-timeline feature detection */
+@supports ((animation-timeline: view()) and (animation-range: entry)) {
+  .scroll-reveal {
+    animation: fade-slide-up linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+
+  .scroll-parallax {
+    animation: parallax-depth linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+  }
+}
+
+/* Fallback for browsers without CSS scroll-timeline */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Shimmer Highlight on Buttons */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transform: rotate(30deg) translateX(-100%);
+  transition: transform 0.7s ease;
+}
+
+.btn-shimmer:hover::after {
+  transform: rotate(30deg) translateX(100%);
+}
+
+/* Holographic Grid Background */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .scroll-reveal, .scroll-parallax {
+    animation: none !important;
+  }
+}

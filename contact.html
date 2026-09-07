@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Contact Us &amp; Service Level Agreement (SLA) — ShieldBrowser macOS</title>
+  <meta name="description" content="ShieldBrowser official support desk, merchant information, customer assistance, hardware re-binding requests, and guaranteed response time SLA matrix.">
+  <link rel="canonical" href="https://shieldbrowser.com/contact">
+
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <link rel="apple-touch-icon" href="assets/icons/app-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .contact-container {
+      padding: 130px 0 80px 0;
+      max-width: 1100px;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 36px;
+      margin-top: 36px;
+    }
+    .contact-info-card, .contact-form-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .contact-info-card h2, .contact-form-card h2 {
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .info-group {
+      margin-bottom: 24px;
+    }
+    .info-label {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .info-val {
+      font-size: 15px;
+      color: #ffffff;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+    .info-val a {
+      color: var(--accent-emerald);
+      text-decoration: none;
+    }
+    .info-val a:hover {
+      text-decoration: underline;
+    }
+    
+    /* SLA Table */
+    .sla-section {
+      margin-top: 60px;
+    }
+    .sla-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .sla-card h2 {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .sla-table-wrapper {
+      overflow-x: auto;
+      margin-top: 24px;
+    }
+    .sla-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      text-align: left;
+    }
+    .sla-table th {
+      background: #090c13;
+      color: var(--text-white);
+      padding: 14px 18px;
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid rgba(34, 197, 94, 0.25);
+    }
+    .sla-table td {
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .sla-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .p-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+    .p-critical { background: rgba(244, 63, 94, 0.2); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.4); }
+    .p-high { background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); }
+    .p-normal { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); }
+    .p-general { background: rgba(148, 163, 184, 0.2); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.4); }
+
+    /* Form */
+    .contact-field {
+      margin-bottom: 20px;
+    }
+    .contact-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .contact-input, .contact-select, .contact-textarea {
+      width: 100%;
+      background: #090c13;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .contact-input:focus, .contact-select:focus, .contact-textarea:focus {
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.25);
+    }
+    @media (max-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="cyber-grid">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/icons/app-icon.png" alt="ShieldBrowser Logo" class="brand-logo-img">
+        <span class="brand-name">Shield<span>Browser</span></span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="features.html" class="nav-link">Features</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+          <li><a href="download.html" class="nav-link">Download</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact &amp; SLA</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="downloads/ShieldBrowser-v1.0.4.dmg" class="nav-download-btn" download>Download .DMG</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container contact-container">
+      <div class="section-tag">Direct Support &amp; Customer Success</div>
+      <h1 class="section-title">Get in Touch with <span class="highlight">Our Engineering Desk</span></h1>
+      <p class="section-subtitle">
+        Have questions about installation, pass activation, device transfers, enterprise licensing, or technical inquiries? We provide guaranteed response SLAs backed by macOS systems engineers.
+      </p>
+
+      <div class="contact-grid">
+        <!-- Merchant & Operational Information -->
+        <div class="contact-info-card">
+          <h2>🛡️ Merchant Information</h2>
+          
+          <div class="info-group">
+            <div class="info-label">Operating Legal Entity</div>
+            <div class="info-val">ShieldBrowser Technologies</div>
+          </div>
+
+          <div class="info-group">
+            <div class="info-label">Customer &amp; Technical Support Email</div>
+            <div class="info-val"><a href="mailto:support@shieldbrowser.com">support@shieldbrowser.com</a></div>
+          </div>
+
+          <div class="info-group">
+            <div class="info-label">Developer &amp; Security Escalations</div>
+            <div class="info-val"><a href="mailto:dev@shieldbrowser.com">dev@shieldbrowser.com</a></div>
+          </div>
+
+          <div class="info-group">
+            <div class="info-label">Support Hours</div>
+            <div class="info-val">
+              Monday — Saturday: 9:00 AM to 9:00 PM IST<br>
+              <span style="color: var(--accent-emerald); font-size: 13px;">⚡ Critical P1 Ticket Triage: 24/7/365</span>
+            </div>
+          </div>
+
+          <div class="info-group">
+            <div class="info-label">Supported Hardware Platforms</div>
+            <div class="info-val">
+              Universal macOS Binary: Apple Silicon <strong>M1, M2, M3, M4, M5, M6</strong> (Base, Pro, Max, Ultra) &amp; Intel Core Macs (macOS 12 to 27 Golden Gate).
+            </div>
+          </div>
+
+          <div class="info-group" style="margin-bottom: 0;">
+            <div class="info-label">Complimentary Trial Verification</div>
+            <div class="info-val" style="font-size: 13.5px; color: var(--text-secondary);">
+              Every download includes a 5-minute complimentary hardware trial upon initial launch. Test your setup freely on live calls before purchasing passes.
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Direct Ticket Form -->
+        <div class="contact-form-card">
+          <h2>✉️ Send an Official Ticket</h2>
+          <form onsubmit="event.preventDefault(); document.getElementById('contact-feedback').style.display = 'block'; this.reset();">
+            <div class="contact-field">
+              <label class="contact-label">Your Name</label>
+              <input type="text" class="contact-input" placeholder="e.g. Rahul Sharma or Alex Vance" required>
+            </div>
+
+            <div class="contact-field">
+              <label class="contact-label">Email Address (for response)</label>
+              <input type="email" class="contact-input" placeholder="you@domain.com" required>
+            </div>
+
+            <div class="contact-field">
+              <label class="contact-label">Inquiry Category</label>
+              <select class="contact-select">
+                <option value="p1">Priority 1 — Pass Activation / Payment Issue</option>
+                <option value="transfer">Hardware Upgrade / IOPlatformUUID Re-Binding</option>
+                <option value="technical">Technical Support / macOS Gatekeeper Assistance</option>
+                <option value="billing">Billing Inquiry / Refund Request</option>
+                <option value="commercial">Commercial / Team Bulk Licensing</option>
+                <option value="general">General Feedback / Feature Request</option>
+              </select>
+            </div>
+
+            <div class="contact-field">
+              <label class="contact-label">Hardware &amp; OS Environment (Optional)</label>
+              <input type="text" class="contact-input" placeholder="e.g. M3 Pro MacBook Pro, macOS 15.1 Sequoia">
+            </div>
+
+            <div class="contact-field">
+              <label class="contact-label">Message Details / Order Reference</label>
+              <textarea class="contact-textarea" rows="4" placeholder="Please describe your query or paste your UPI / Card transaction ID if applicable..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-shimmer" style="width: 100%;">
+              <span>Submit Priority Ticket →</span>
+            </button>
+
+            <div id="contact-feedback" style="display: none; margin-top: 18px; padding: 14px; background: rgba(34, 197, 94, 0.15); border: 1px solid var(--accent-emerald); border-radius: var(--radius-sm); color: var(--text-emerald); font-size: 13.5px; text-align: center; line-height: 1.6;">
+              ✓ <strong>Ticket Logged Successfully!</strong> An engineer has been alerted. You will receive a response within the guaranteed SLA window below.
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Service Level Agreement (SLA) Matrix -->
+      <div class="sla-section">
+        <div class="sla-card">
+          <h2>Official Service Level Agreement (SLA) Matrix</h2>
+          <p style="color: var(--text-secondary); font-size: 14.5px; line-height: 1.7; margin-bottom: 12px;">
+            We operate under defined, transparent response and resolution SLAs so that active pass holders and interviewees can rely on prompt, professional support.
+          </p>
+
+          <div class="sla-table-wrapper">
+            <table class="sla-table">
+              <thead>
+                <tr>
+                  <th>Severity Tier</th>
+                  <th>Incident Scope</th>
+                  <th>First Response SLA</th>
+                  <th>Target Resolution</th>
+                  <th>Coverage Window</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="p-badge p-critical">P1 — Critical</span></td>
+                  <td>Pass activation failure, payment debited without license unlock, immediate live interview block.</td>
+                  <td style="color: #4ade80; font-weight: 700;">&lt; 30 Minutes</td>
+                  <td style="color: #4ade80; font-weight: 700;">&lt; 2 Hours</td>
+                  <td><strong>24/7/365</strong></td>
+                </tr>
+                <tr>
+                  <td><span class="p-badge p-high">P2 — High</span></td>
+                  <td>macOS Gatekeeper authorization blockage, display server isolation anomaly, hardware re-binding during active pass.</td>
+                  <td style="color: #fcd34d; font-weight: 700;">&lt; 1 Hour</td>
+                  <td style="color: #fcd34d; font-weight: 700;">&lt; 4 Hours</td>
+                  <td>Mon — Sat, 9 AM – 9 PM IST</td>
+                </tr>
+                <tr>
+                  <td><span class="p-badge p-normal">P3 — Normal</span></td>
+                  <td>General billing reconciliation, duplicate charge inquiries, refund applications, device transfer for future pass.</td>
+                  <td style="color: #93c5fd; font-weight: 600;">&lt; 2 Hours</td>
+                  <td style="color: #93c5fd; font-weight: 600;">&lt; 6 Hours</td>
+                  <td>Mon — Sat, 9 AM – 9 PM IST</td>
+                </tr>
+                <tr>
+                  <td><span class="p-badge p-general">P4 — General</span></td>
+                  <td>Feature suggestions, keyboard shortcut feedback, commercial team licensing, general questions.</td>
+                  <td>&lt; 12 Hours</td>
+                  <td>&lt; 24 Hours</td>
+                  <td>Standard Business Days</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="assets/icons/app-icon.png" alt="ShieldBrowser" class="brand-logo-img">
+            <span class="brand-name">Shield<span>Browser</span></span>
+          </a>
+          <p>
+            The premier privacy browser for macOS engineered with native Quartz Window Server compositor isolation. 100% excluded from screen-sharing streams.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="download.html">Download .DMG</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal &amp; Merchant</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
+            <li><a href="shipping.html">Digital Goods Delivery</a></li>
+            <li><a href="contact.html">Contact Us &amp; SLA</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal-notice">
+          © 2026 ShieldBrowser Technologies. Universal macOS Binary (Apple Silicon M1–M6 &amp; Intel). All rights reserved.
+        </div>
+        <div class="system-status">
+          <span class="status-dot"></span>
+          <span>Verified Build v1.0.4 • macOS 27 Golden Gate Ready</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

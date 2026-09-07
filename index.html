@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>ShieldBrowser — Completely Invisible to Any Screen Share on macOS</title>
+  <meta name="title" content="ShieldBrowser — Completely Invisible to Any Screen Share on macOS">
+  <meta name="description" content="ShieldBrowser utilizes native macOS Quartz Window Server isolation to exclude your browser window from Zoom, Google Meet, Teams, Discord, and OBS in real time. 5-min free trial included.">
+  <meta name="keywords" content="invisible browser, screen share privacy mac, hide window zoom, stealth browser macos, online interview browser, private mac browser, bypass screen recording, quartz window server">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://shieldbrowser.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shieldbrowser.com/">
+  <meta property="og:title" content="ShieldBrowser — Completely Invisible to Any Screen Share on macOS">
+  <meta property="og:description" content="Native macOS browser engineered with kernel-level window sharing exclusion. 100% invisible to Zoom, Meet, Teams, Discord, and OBS.">
+  <meta property="og:image" content="assets/images/og-preview.svg">
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://shieldbrowser.com/">
+  <meta property="twitter:title" content="ShieldBrowser — Invisible Screen-Sharing Browser for Mac">
+  <meta property="twitter:description" content="Browse confidentially during live screen shares. Native Apple Silicon & Intel support.">
+  <meta property="twitter:image" content="assets/images/og-preview.svg">
+
+  <!-- Favicons & Apple Touch Icons -->
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <link rel="apple-touch-icon" href="assets/icons/app-icon.png">
+  <meta name="theme-color" content="#07090e">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- JSON-LD Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "ShieldBrowser for macOS",
+        "operatingSystem": "macOS 12.0 to 27.0+ Golden Gate (Universal: Apple Silicon M1, M2, M3, M4, M5, M6 & Intel Core)",
+        "applicationCategory": "BrowserApplication",
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "INR",
+          "lowPrice": "199",
+          "highPrice": "3999",
+          "offerCount": "6"
+        },
+        "description": "Native macOS privacy browser engineered with Quartz Window Server compositor isolation to exclude the browser window from Zoom, Google Meet, Teams, Discord, and screen capture in real time.",
+        "softwareVersion": "1.0.4",
+        "downloadUrl": "https://shieldbrowser.com/download"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Will meeting attendees on Zoom or Google Meet see a black rectangle where the browser is?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. ShieldBrowser utilizes macOS native CGWindowSharingType.none compositor instructions. The Window Server completely skips rendering the window into capture streams. Viewers see your normal desktop wallpaper or whichever applications are running behind ShieldBrowser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does ShieldBrowser support Apple Silicon M1, M2, M3, M4, M5, and M6 Macs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. ShieldBrowser is compiled as a native Universal macOS binary (arm64 + x86_64), running with maximum Safari-grade speed and zero emulation on Apple Silicon (M1, M2, M3, M4, M5, M6, including Pro, Max, and Ultra variants) as well as Intel-based Macs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I try ShieldBrowser for free before purchasing a pass?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Every Mac computer receives a complimentary 5-minute hardware trial upon initial download so you can test the invisibility on a live screen share before activating a pass."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where and how do I purchase a pass?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All pass activations occur securely inside the ShieldBrowser macOS application. After opening the app, you can select any of our 6 time-bound passes and pay via native UPI or Cards with instant hardware binding."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="cyber-grid">
+
+  <!-- Fixed Glassmorphic Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="ShieldBrowser Home">
+        <img src="assets/icons/app-icon.png" alt="ShieldBrowser Logo" class="brand-logo-img">
+        <span class="brand-name">Shield<span>Browser</span></span>
+        <span class="version-pill">v1.0.4</span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#demo" class="nav-link">Live Demo</a></li>
+          <li><a href="#compatibility" class="nav-link">Compatibility</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#shortcuts" class="nav-link">Shortcuts</a></li>
+          <li><a href="#how-it-works" class="nav-link">How to Use</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="downloads/ShieldBrowser-v1.0.4.dmg" class="nav-download-btn btn-shimmer" download>
+          <img src="assets/icons/apple-icon.svg" alt="Apple" style="width: 14px; height: 14px; fill: currentColor;">
+          <span>Download .DMG</span>
+        </a>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="#demo" class="nav-link">Live Demo</a>
+    <a href="#compatibility" class="nav-link">Compatibility</a>
+    <a href="#features" class="nav-link">Features</a>
+    <a href="#shortcuts" class="nav-link">Keyboard Shortcuts</a>
+    <a href="#how-it-works" class="nav-link">How to Use</a>
+    <a href="#pricing" class="nav-link">Pricing Passes</a>
+    <a href="#faq" class="nav-link">Frequently Asked Questions</a>
+    <a href="download.html" class="nav-link">Download Center</a>
+    <a href="downloads/ShieldBrowser-v1.0.4.dmg" class="btn btn-primary" download style="margin-top: 10px;">
+      <span> Download ShieldBrowser-v1.0.4.dmg</span>
+    </a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <canvas id="hero-3d-canvas" class="hero-bg-canvas"></canvas>
+      <div class="hero-glow"></div>
+
+      <div class="container hero-content">
+        <div class="hero-announcement">
+          <span class="status-dot"></span>
+          <span>Verified up to macOS 27 Golden Gate • Native Apple Silicon M1–M6 &amp; Intel Support</span>
+        </div>
+
+        <h1 class="hero-title">
+          Browse Confidentially.<br>
+          <span class="glow-green">Completely Invisible</span> to Any Screen Share.
+        </h1>
+
+        <p class="hero-subtitle">
+          ShieldBrowser communicates directly with the macOS Quartz Display Server to exclude its window from 
+          <strong>Zoom, Google Meet, Microsoft Teams, Discord, and OBS</strong> in real time. Full web power with zero capture footprint.
+        </p>
+
+        <div class="hero-actions">
+          <a href="downloads/ShieldBrowser-v1.0.4.dmg" class="btn btn-primary btn-lg btn-shimmer" download id="hero-cta-download">
+            <img src="assets/icons/apple-icon.svg" alt="Apple" class="btn-icon" style="filter: brightness(0);">
+            <span>Download Free .DMG (2.3 MB)</span>
+          </a>
+          <a href="https://www.mediafire.com/file/0jfihittclvhhkl/ShieldBrowser-v1.0.4.dmg/file" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">
+            <span>🌐 MediaFire Mirror ↗</span>
+          </a>
+        </div>
+
+        <div class="metric-strip">
+          <div class="metric-item">
+            <span class="metric-val">⚡ WebKit</span>
+            <span class="metric-label">100% Native Speed</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-val">🔒 Quartz</span>
+            <span class="metric-label">Window Server Exclusion</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-val">🛡️ Zero Logs</span>
+            <span class="metric-label">Local Container Only</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-val">⭐ 1,500+</span>
+            <span class="metric-label">Active Software Engineers</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Screen-Share Simulator -->
+    <section class="section" id="demo">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Interactive Hardware Simulator</div>
+          <h2 class="section-title">See Exactly How <span class="highlight">Invisibility Works</span></h2>
+          <p class="section-subtitle">
+            Toggle between your physical screen and what meeting attendees see over screen share. Drag the opacity slider to test transparent hovering!
+          </p>
+        </div>
+
+        <div class="simulator-wrapper tilt-card">
+          <!-- Toolbar Controls -->
+          <div class="simulator-toolbar">
+            <div class="simulator-mode-tabs">
+              <button class="sim-tab-btn active" id="sim-tab-user">
+                <span>👁️ What You See on Your Mac (Real Window)</span>
+              </button>
+              <button class="sim-tab-btn" id="sim-tab-viewer">
+                <span>🎥 What Viewers See on Zoom / Meet (Stealth Mode)</span>
+              </button>
+            </div>
+
+            <div class="simulator-slider-group">
+              <span class="slider-label">Window Opacity:</span>
+              <input type="range" min="10" max="100" value="94" class="sim-slider" id="sim-opacity-slider" aria-label="Adjust Window Opacity">
+              <span class="slider-value-badge" id="sim-opacity-val">94%</span>
+            </div>
+          </div>
+
+          <!-- Simulator Stage -->
+          <div class="simulator-stage">
+            <img src="assets/images/mac-desktop.svg" alt="macOS Desktop with VS Code live coding interview" class="simulator-bg-img">
+
+            <!-- Real ShieldBrowser App Window (Exact Native macOS UI) -->
+            <div class="floating-browser-window" id="floating-browser-window">
+              <!-- Native macOS Titlebar / Toolbar (Exact Match to App Screenshot) -->
+              <div class="browser-header">
+                <!-- Traffic Light Controls -->
+                <div class="window-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <div class="browser-nav-arrows">
+                  <span class="nav-arrow">&lt;</span>
+                  <span class="nav-arrow">&gt;</span>
+                </div>
+
+                <!-- Omnibox / URL Pill -->
+                <div class="browser-address-bar">
+                  <span class="omnibox-lock">🔒</span>
+                  <span class="omnibox-url">https://chatgpt.com</span>
+                  <span class="omnibox-dot"></span>
+                  <span class="omnibox-reload">↻</span>
+                </div>
+
+                <!-- Crown VIP Badge Pill (Clickable -> Opens Real In-App Popover) -->
+                <button class="browser-vip-pill" id="browser-vip-pill" title="Click to view in-app VIP account popover">
+                  <span class="vip-crown">👑</span>
+                  <span class="vip-text">VIP</span>
+                </button>
+
+                <!-- Real-Time Native Opacity Slider Capsule (Exact from Real App Screenshot) -->
+                <div class="browser-native-slider-capsule">
+                  <span class="capsule-icon">🌓</span>
+                  <input type="range" min="10" max="100" value="94" class="capsule-slider" id="capsule-opacity-slider" aria-label="Adjust Opacity Inside App">
+                  <span class="capsule-pct" id="capsule-opacity-pct">94%</span>
+                  <span class="capsule-lock">🔒</span>
+                </div>
+
+                <!-- Action Toolbar Icons -->
+                <div class="browser-toolbar-actions">
+                  <span class="tb-action" title="Drag / Position">✥</span>
+                  <span class="tb-action" title="Always on Top">📌</span>
+                  <span class="tb-action" title="Quartz Invisibility Active">👁️</span>
+                </div>
+              </div>
+
+              <!-- In-App Account VIP Popover (Exact Match to Screenshot media_1788749892610.jpg) -->
+              <div class="app-vip-popover" id="app-vip-popover">
+                <div class="popover-arrow"></div>
+                <div class="popover-user-row">
+                  <div class="popover-avatar">👤</div>
+                  <div>
+                    <div class="popover-email">foritgamer@gmail.com</div>
+                    <div class="popover-status">👑 Active Pass • 7 Days Unlocked</div>
+                  </div>
+                </div>
+                <div class="popover-section-label">EXTEND / CHOOSE PLAN (IN-APP NATIVE):</div>
+                <div class="popover-plan-row">
+                  <span>⚡ 24 Hours Pass</span>
+                  <span class="plan-price-tag">₹199</span>
+                </div>
+                <div class="popover-plan-row active">
+                  <span>⭐ 7 Days (Popular)</span>
+                  <span class="plan-price-tag">₹499</span>
+                </div>
+                <div class="popover-plan-row">
+                  <span>💎 1 Month VIP</span>
+                  <span class="plan-price-tag">₹999</span>
+                </div>
+                <div class="popover-footer">
+                  <button class="popover-signout-btn" onclick="document.getElementById('app-vip-popover').classList.toggle('open');">Close Popover</button>
+                  <span class="popover-hw-id">IOPlatformUUID Bound ✓</span>
+                </div>
+              </div>
+
+              <!-- Native Bookmarks / Tabs Bar (Exact Match from Screenshot) -->
+              <div class="browser-bookmarks-bar">
+                <div class="browser-tab active">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="color: #10a37f; margin-right: 6px;"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm1 14.93V15a1 1 0 01-2 0v-.07A8 8 0 014.07 9H5a1 1 0 010 2h-.07A8 8 0 0111 16.93z"/></svg>
+                  <span>ChatGPT</span>
+                  <span class="tab-close">×</span>
+                </div>
+                <div class="browser-bookmark">
+                  <span>🤖 ChatGPT</span>
+                </div>
+                <div class="browser-bookmark">
+                  <span>✨ Gemini</span>
+                </div>
+                <div class="browser-bookmark">
+                  <span>📚 LeetCode</span>
+                </div>
+              </div>
+
+              <!-- Browser Web Content Body (Real ChatGPT Web Interface) -->
+              <div class="browser-body">
+                <div class="chatgpt-header-row">
+                  <span class="chatgpt-model-badge">ChatGPT 4o ▾</span>
+                  <span class="chatgpt-stealth-pill">● Quartz Compositor Stream Excluded</span>
+                </div>
+
+                <!-- Chat User Message -->
+                <div class="chat-msg chat-msg-user">
+                  <div class="msg-avatar user-av">U</div>
+                  <div class="msg-bubble">
+                    Write the optimal solution for Median of Two Sorted Arrays in C++ with partition binary search.
+                  </div>
+                </div>
+
+                <!-- Chat Assistant Message -->
+                <div class="chat-msg chat-msg-assistant">
+                  <div class="msg-avatar gpt-av">🤖</div>
+                  <div class="msg-bubble">
+                    <p style="margin-bottom: 6px;">Here is the <strong>O(log(min(m, n)))</strong> optimal binary search solution:</p>
+                    <div class="code-snippet-box">
+                      <span style="color: #64748b;">// Binary search on smaller array nums1</span><br>
+                      <span style="color: #38bdf8;">int</span> low = 0, high = m;<br>
+                      <span style="color: #c084fc;">while</span> (low &lt;= high) {<br>
+                      &nbsp;&nbsp;<span style="color: #38bdf8;">int</span> partX = (low + high) / 2;<br>
+                      &nbsp;&nbsp;<span style="color: #38bdf8;">int</span> partY = (m + n + 1) / 2 - partX;<br>
+                      &nbsp;&nbsp;<span style="color: #c084fc;">if</span> (maxLeftX &lt;= minRightY &amp;&amp; maxLeftY &lt;= minRightX) {<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #22c55e;">return</span> (m + n) % 2 ? max(maxLeftX, maxLeftY) : ...;<br>
+                      &nbsp;&nbsp;}<br>
+                      }
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Chat Input Mockup -->
+                <div class="chat-input-bar">
+                  <span>Message ChatGPT...</span>
+                  <span style="font-size: 10px; color: var(--text-muted);">⌘K</span>
+                </div>
+              </div>
+
+              <div class="stealth-status-watermark">
+                ● macOS Window Server Isolated (CGWindowSharingType.none)
+              </div>
+            </div>
+
+            <!-- Notice when viewer mode is active -->
+            <div class="viewer-stealth-notice" id="viewer-stealth-notice">
+              <span class="badge">ZOOM / GOOGLE MEET LIVE FEED</span>
+              <span>ShieldBrowser is 100% physically excluded by macOS Quartz Window Server. Meeting attendees only see your VS Code editor and desktop wallpaper.</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 18px; font-size: 13px; color: var(--text-muted);" id="panic-key-hint">
+          ⌨️ Press <strong style="color: #ffffff;">Escape</strong> to test Instant Panic Hide (&lt;10ms window minimization)
+        </div>
+      </div>
+    </section>
+
+    <!-- Compatibility Matrix -->
+    <section class="section" id="compatibility" style="background: rgba(16, 20, 30, 0.4);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Tested &amp; Verified</div>
+          <h2 class="section-title">Zero Capture Across <span class="highlight">Every Platform</span></h2>
+          <p class="section-subtitle">
+            Because isolation happens in the Apple Quartz Window Server itself, no screen-capture software can bypass or intercept it.
+          </p>
+        </div>
+
+        <div class="compat-grid">
+          <div class="compat-card tilt-card">
+            <div class="compat-info">
+              <img src="assets/icons/zoom-icon.svg" alt="Zoom Meetings" class="compat-icon">
+              <div>
+                <h3 class="compat-name">Zoom Meetings</h3>
+                <p class="compat-note">Desktop Share &amp; Recording</p>
+              </div>
+            </div>
+            <span class="compat-badge">✓ 100% Invisible</span>
+          </div>
+
+          <div class="compat-card tilt-card">
+            <div class="compat-info">
+              <img src="assets/icons/meet-icon.svg" alt="Google Meet" class="compat-icon">
+              <div>
+                <h3 class="compat-name">Google Meet</h3>
+                <p class="compat-note">Entire Screen &amp; Window Capture</p>
+              </div>
+            </div>
+            <span class="compat-badge">✓ 100% Invisible</span>
+          </div>
+
+          <div class="compat-card tilt-card">
+            <div class="compat-info">
+              <img src="assets/icons/teams-icon.svg" alt="Microsoft Teams" class="compat-icon">
+              <div>
+                <h3 class="compat-name">Microsoft Teams</h3>
+                <p class="compat-note">Meeting &amp; Live Event Share</p>
+              </div>
+            </div>
+            <span class="compat-badge">✓ 100% Invisible</span>
+          </div>
+
+          <div class="compat-card tilt-card">
+            <div class="compat-info">
+              <img src="assets/icons/discord-icon.svg" alt="Discord Screen Share" class="compat-icon">
+              <div>
+                <h3 class="compat-name">Discord</h3>
+                <p class="compat-note">1080p / 60FPS Screen Streaming</p>
+              </div>
+            </div>
+            <span class="compat-badge">✓ 100% Invisible</span>
+          </div>
+
+          <div class="compat-card tilt-card">
+            <div class="compat-info">
+              <img src="assets/icons/obs-icon.svg" alt="OBS Studio" class="compat-icon">
+              <div>
+                <h3 class="compat-name">OBS Studio</h3>
+                <p class="compat-note">Display Capture &amp; Screen Recorders</p>
+              </div>
+            </div>
+            <span class="compat-badge">✓ Excluded</span>
+          </div>
+
+          <div class="compat-card tilt-card">
+            <div class="compat-info">
+              <img src="assets/icons/slack-icon.svg" alt="Slack Huddles" class="compat-icon">
+              <div>
+                <h3 class="compat-name">Slack Huddles</h3>
+                <p class="compat-note">Live Screen Sharing &amp; Webex</p>
+              </div>
+            </div>
+            <span class="compat-badge">✓ 100% Invisible</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Engineering Features -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Engineering Architecture</div>
+          <h2 class="section-title">Engineered for <span class="highlight">Unmatched Discretion</span></h2>
+          <p class="section-subtitle">
+            Built from scratch using native Apple Swift and WebKit technologies for razor-sharp speed and hardware-grade isolation.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card tilt-card">
+            <div class="feature-icon-wrapper">🛡️</div>
+            <h3 class="feature-title">Quartz Compositor Isolation</h3>
+            <p class="feature-desc">
+              Directly sets <code>CGWindowSharingType.none</code> instruction on the window buffer. The OS display compositor physically skips the frame during capture.
+            </p>
+            <span class="feature-tag">Native macOS CoreGraphics</span>
+          </div>
+
+          <div class="feature-card tilt-card">
+            <div class="feature-icon-wrapper">🎚️</div>
+            <h3 class="feature-title">Real-Time Opacity Slider</h3>
+            <p class="feature-desc">
+              Fine-tune the browser opacity anywhere from 10% to 100% via the native slider. Read notes or reference code directly over background windows.
+            </p>
+            <span class="feature-tag">10% — 100% Transparency</span>
+          </div>
+
+          <div class="feature-card tilt-card">
+            <div class="feature-icon-wrapper">⚡</div>
+            <h3 class="feature-title">Emergency Panic Key</h3>
+            <p class="feature-desc">
+              Hit <code>Escape</code> or <code>⌘H</code> at any time to minimize and hide ShieldBrowser in under 10 milliseconds.
+            </p>
+            <span class="feature-tag">&lt; 10ms Response Time</span>
+          </div>
+
+          <div class="feature-card tilt-card">
+            <div class="feature-icon-wrapper">🔒</div>
+            <h3 class="feature-title">Single-Mac Hardware Lock</h3>
+            <p class="feature-desc">
+              Licenses bind cryptographically to your Mac's physical <code>IOPlatformUUID</code> to guarantee tamper resistance and prevent unauthorized multi-device sharing.
+            </p>
+            <span class="feature-tag">Hardware UUID Binding</span>
+          </div>
+
+          <div class="feature-card tilt-card">
+            <div class="feature-icon-wrapper">🚀</div>
+            <h3 class="feature-title">Safari-Grade WebKit Engine</h3>
+            <p class="feature-desc">
+              Zero Chromium bloat. Native WebKit execution ensures low RAM usage, instant startup, smooth scrolling, and complete compatibility with modern web apps.
+            </p>
+            <span class="feature-tag">Universal Binary (M1–M6 &amp; Intel)</span>
+          </div>
+
+          <div class="feature-card tilt-card">
+            <div class="feature-icon-wrapper">🕵️‍♂️</div>
+            <h3 class="feature-title">Strict Zero-Logs Guarantee</h3>
+            <p class="feature-desc">
+              Your browsing history, cookies, session cache, and credentials remain exclusively in your local macOS sandbox. Nothing is transmitted to any cloud server.
+            </p>
+            <span class="feature-tag">100% Local Sandboxed Data</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6-Tier Pricing Section (In-App Payment Flow) -->
+    <section class="section pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Flexible Time-Bound Passes</div>
+          <h2 class="section-title">Choose Your <span class="highlight">Shield Pass</span></h2>
+          <p class="section-subtitle">
+            No recurring subscription traps. No unexpected charges. Select a time-bound pass that matches your interview or project duration.
+          </p>
+        </div>
+
+        <!-- In-App Payment Notice Banner -->
+        <div class="pricing-banner-notice">
+          <div class="pricing-notice-text">
+            <strong>🔒 Seamless In-App Activation:</strong> For your security and instant Mac hardware binding, all passes are activated directly inside the <strong>ShieldBrowser macOS App</strong> via native UPI &amp; Cards.
+          </div>
+          <a href="downloads/ShieldBrowser-v1.0.4.dmg" class="btn btn-secondary btn-sm" download>
+            <span> Download App First</span>
+          </a>
+        </div>
+
+        <!-- 6 Pricing Cards Grid -->
+        <div class="pricing-grid">
+          <!-- 1. 24 Hours -->
+          <div class="pricing-card" data-plan-id="plan-24hr">
+            <div class="plan-header">
+              <div class="plan-time-tag">⚡ 24 HOURS</div>
+              <h3 class="plan-name">1 Day Pass</h3>
+            </div>
+            <div class="plan-price-box">
+              <span class="plan-currency">₹</span>
+              <span class="plan-amount">199</span>
+              <span class="plan-duration">Expires in 24 Hours</span>
+            </div>
+            <p class="plan-description">Emergency 1-day pass for today's critical interview or assessment test.</p>
+            <div class="plan-select-indicator">Select Pass</div>
+          </div>
+
+          <!-- 2. 3 Days Sprint -->
+          <div class="pricing-card" data-plan-id="plan-3days">
+            <div class="plan-header">
+              <div class="plan-time-tag">⚡ 3 DAYS</div>
+              <h3 class="plan-name">Weekend Sprint</h3>
+            </div>
+            <div class="plan-price-box">
+              <span class="plan-currency">₹</span>
+              <span class="plan-amount">349</span>
+              <span class="plan-duration">Expires in 72 Hours</span>
+            </div>
+            <p class="plan-description">Multi-round interview sprint, technical challenges, and weekend tests.</p>
+            <div class="plan-select-indicator">Select Pass</div>
+          </div>
+
+          <!-- 3. 7 Days Pass (Default Selected / Popular) -->
+          <div class="pricing-card selected" data-plan-id="plan-7days">
+            <div class="pricing-badge-popular">MOST POPULAR</div>
+            <div class="plan-header">
+              <div class="plan-time-tag">⭐ 7 DAYS</div>
+              <h3 class="plan-name">Prime Interview</h3>
+            </div>
+            <div class="plan-price-box">
+              <span class="plan-currency">₹</span>
+              <span class="plan-amount">499</span>
+              <span class="plan-duration">Expires in 7 Days</span>
+            </div>
+            <p class="plan-description">Complete job hunting week. Covers technical rounds, manager reviews &amp; coding pairs.</p>
+            <div class="plan-select-indicator">Selected ✓</div>
+          </div>
+
+          <!-- 4. 1 Month Pro -->
+          <div class="pricing-card" data-plan-id="plan-1month">
+            <div class="plan-header">
+              <div class="plan-time-tag">💎 1 MONTH</div>
+              <h3 class="plan-name">Monthly Pro</h3>
+            </div>
+            <div class="plan-price-box">
+              <span class="plan-currency">₹</span>
+              <span class="plan-amount">999</span>
+              <span class="plan-duration">Expires in 30 Days</span>
+            </div>
+            <p class="plan-description">Freelancers, remote software engineers &amp; daily confidential client meetings.</p>
+            <div class="plan-select-indicator">Select Pass</div>
+          </div>
+
+          <!-- 5. 3 Months Semester -->
+          <div class="pricing-card" data-plan-id="plan-3months">
+            <div class="plan-header">
+              <div class="plan-time-tag">🚀 3 MONTHS</div>
+              <h3 class="plan-name">Semester Pass</h3>
+            </div>
+            <div class="plan-price-box">
+              <span class="plan-currency">₹</span>
+              <span class="plan-amount">1,999</span>
+              <span class="plan-duration">Expires in 90 Days</span>
+            </div>
+            <p class="plan-description">College semester exams, technical internships &amp; corporate job probation periods.</p>
+            <div class="plan-select-indicator">Select Pass</div>
+          </div>
+
+          <!-- 6. 1 Year Pass -->
+          <div class="pricing-card" data-plan-id="plan-1year">
+            <div class="plan-header">
+              <div class="plan-time-tag">🔥 1 YEAR</div>
+              <h3 class="plan-name">Annual Pro</h3>
+            </div>
+            <div class="plan-price-box">
+              <span class="plan-currency">₹</span>
+              <span class="plan-amount">3,999</span>
+              <span class="plan-duration">Expires in 365 Days</span>
+            </div>
+            <p class="plan-description">Year-long pro pass. Auto-expiring, zero recurring credit card surprises.</p>
+            <div class="plan-select-indicator">Select Pass</div>
+          </div>
+        </div>
+
+        <!-- Pricing Action Wrapper -->
+        <div class="pricing-action-wrapper">
+          <div class="selected-plan-summary" id="selected-plan-summary-text">
+            Selected Pass: <span class="plan-glow">7 Days Pass (₹499)</span> • Most Popular • Complete job hunting &amp; interview week
+          </div>
+
+          <button class="btn btn-primary pricing-cta-btn btn-shimmer" id="btn-proceed-in-app">
+            <span></span>
+            <span>Activate 7 Days Pass (₹499) in ShieldBrowser App →</span>
+          </button>
+
+          <div class="pricing-guarantee-strip">
+            <span>🔒 256-Bit SSL Encrypted</span>
+            <span>⚡ Instant UPI / GPay / Cards Activation</span>
+            <span>🎁 5-Min Free Hardware Trial Included</span>
+            <span> Universal macOS Binary</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-Step Setup Guide -->
+    <section class="section" id="how-it-works" style="background: #090c13;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Instant Provisioning</div>
+          <h2 class="section-title">Up and Running in <span class="highlight">Under 60 Seconds</span></h2>
+          <p class="section-subtitle">
+            No complicated proxies, no virtual machines, and no browser extensions required.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card tilt-card">
+            <div class="step-number">01</div>
+            <h3 class="step-title">Download &amp; Install</h3>
+            <p class="step-desc">
+              Download <code>ShieldBrowser-v1.0.4.dmg</code>, open the installer, and drag the app directly into your <code>/Applications</code> folder on any Intel or Apple Silicon Mac.
+            </p>
+          </div>
+
+          <div class="step-card tilt-card">
+            <div class="step-number">02</div>
+            <h3 class="step-title">Start 5-Min Free Trial</h3>
+            <p class="step-desc">
+              Launch ShieldBrowser and sign in with Google. Your Mac's hardware trial begins automatically with zero payment information needed.
+            </p>
+          </div>
+
+          <div class="step-card tilt-card">
+            <div class="step-number">03</div>
+            <h3 class="step-title">Share Screen Confidently</h3>
+            <p class="step-desc">
+              Join your Zoom, Google Meet, or Teams call, share your entire desktop screen, and browse or view notes with absolute peace of mind.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Use Tutorial & Keyboard Shortcuts Masterclass -->
+    <section class="section shortcuts-section" id="shortcuts">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <div class="section-tag">Pro Workflow &amp; Keybindings</div>
+          <h2 class="section-title">Master <span class="highlight">Shortcuts &amp; How to Use</span></h2>
+          <p class="section-subtitle">
+            Take complete command of ShieldBrowser during live screen shares. Toggle ghost invisibility, trigger click-through mode, fine-tune opacity, and panic hide in milliseconds.
+          </p>
+        </div>
+
+        <!-- 4-Phase How-To-Use Workflow Tutorial Cards -->
+        <div class="tutorial-workflow-grid">
+          <div class="tutorial-card tilt-card">
+            <div class="tutorial-step-header">
+              <span class="tutorial-step-tag">STEP 1: STEALTH START</span>
+              <span class="tutorial-step-icon">🛡️</span>
+            </div>
+            <h3>Join Call &amp; Share Screen</h3>
+            <p>
+              Open ShieldBrowser before or during any Zoom, Google Meet, or Microsoft Teams presentation. Kernel-level Quartz Compositor exclusion (<code>CGWindowSharingType.none</code>) is active by default. Meeting attendees see your clean wallpaper—never your browser.
+            </p>
+            <div class="tutorial-key-hint">
+              <span>Quick Summon:</span>
+              <span class="kbd-combo"><span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">B</span></span>
+            </div>
+          </div>
+
+          <div class="tutorial-card tilt-card">
+            <div class="tutorial-step-header">
+              <span class="tutorial-step-tag">STEP 2: GHOST &amp; SWEET SPOT</span>
+              <span class="tutorial-step-icon">👻</span>
+            </div>
+            <h3>Ghost Mode &amp; 36% Opacity</h3>
+            <p>
+              Press Ghost Mode to hide toolbars and tabs for a 100% borderless floating view. Then hit the <strong>36% Stealth Sweet Spot</strong>: your browser notes stay crisp and legible to you, while your background VS Code or presentation shines straight through.
+            </p>
+            <div class="tutorial-key-hint">
+              <span>Ghost:</span>
+              <span class="kbd-combo"><span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">H</span></span>
+              <span style="margin: 0 4px;">•</span>
+              <span>36%:</span>
+              <span class="kbd-combo"><span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">⌥</span><span class="kbd-plus">+</span><span class="kbd-key">6</span></span>
+            </div>
+          </div>
+
+          <div class="tutorial-card tilt-card">
+            <div class="tutorial-step-header">
+              <span class="tutorial-step-tag">STEP 3: CLICK-THROUGH</span>
+              <span class="tutorial-step-icon">🖱️</span>
+            </div>
+            <h3>Type Behind the Browser</h3>
+            <p>
+              Need to write code in VS Code or navigate your terminal while keeping documentation visible right on top? Toggle Click-Through Mode: mouse clicks pass directly through ShieldBrowser into whatever app is behind it. Press <code>Escape</code> anytime to cancel.
+            </p>
+            <div class="tutorial-key-hint">
+              <span>Click-Through:</span>
+              <span class="kbd-combo"><span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">C</span></span>
+              <span style="margin: 0 4px;">•</span>
+              <span>Exit:</span>
+              <span class="kbd-combo"><span class="kbd-key">Esc</span></span>
+            </div>
+          </div>
+
+          <div class="tutorial-card tilt-card">
+            <div class="tutorial-step-header">
+              <span class="tutorial-step-tag">STEP 4: ELEMENT ZAP &amp; AI</span>
+              <span class="tutorial-step-icon">⚡</span>
+            </div>
+            <h3>Zap Clutter &amp; Analyze Screen</h3>
+            <p>
+              Activate Element Zap to click and instantly vaporize distracting sidebars, ads, or headers on any webpage. Press <code>⌘ + Shift + G</code> to run instant Gemini AI contextual analysis on your active screen content for rapid answers.
+            </p>
+            <div class="tutorial-key-hint">
+              <span>Zap:</span>
+              <span class="kbd-combo"><span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">E</span></span>
+              <span style="margin: 0 4px;">•</span>
+              <span>Gemini AI:</span>
+              <span class="kbd-combo"><span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">G</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Tabs & Search Bar -->
+        <div class="shortcut-filter-bar">
+          <div class="shortcut-tabs" id="shortcut-tabs">
+            <button class="shortcut-tab active" data-category="all">All Shortcuts (39)</button>
+            <button class="shortcut-tab" data-category="stealth">🛡️ Stealth &amp; Window (12)</button>
+            <button class="shortcut-tab" data-category="opacity">👻 Opacity (7)</button>
+            <button class="shortcut-tab" data-category="browsing">🌐 Browsing (11)</button>
+            <button class="shortcut-tab" data-category="system">⚙️ System &amp; Mac (9)</button>
+          </div>
+
+          <div class="shortcut-search-box">
+            <span class="shortcut-search-icon">🔍</span>
+            <input type="text" class="shortcut-search-input" id="shortcut-search" placeholder="Search shortcuts (e.g. ghost, opacity, summon)..." aria-label="Search keyboard shortcuts">
+          </div>
+        </div>
+
+        <!-- Master Shortcuts Table Card -->
+        <div class="shortcut-table-card tilt-card">
+          <div class="shortcut-table-responsive">
+            <table class="shortcut-table" id="shortcut-table">
+              <thead>
+                <tr>
+                  <th style="width: 240px;">Keyboard Shortcut</th>
+                  <th style="width: 260px;">Action / Feature</th>
+                  <th>Description &amp; How It Works</th>
+                  <th style="width: 140px; text-align: right;">Category</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- 1. Core Stealth & Window Controls -->
+                <tr data-category="stealth" data-keywords="summon hide browser toggle display">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">B</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Instant Summon / Hide Browser</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Ek second me ShieldBrowser ko samne lana ya hide karna. Zero latency window toggle.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill">STEALTH</span>
+                  </td>
+                </tr>
+
+                <tr data-category="stealth" data-keywords="quick summon space alternative">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">Space</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Quick Summon</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Instant summon ka alternative shortcut. Spotlight-style rapid access.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill">STEALTH</span>
+                  </td>
+                </tr>
+
+                <tr data-category="stealth" data-keywords="screen share shield isolation kernel toggle">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">S</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Toggle Screen Share Shield</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Kernel-level window isolation ON / OFF switch (<code>CGWindowSharingType</code>).</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill">STEALTH</span>
+                  </td>
+                </tr>
+
+                <tr data-category="stealth" data-keywords="ghost mode borderless clean view tabs toolbar address">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">H</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Toggle Ghost Mode</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Toolbar, address bar, aur tabs hide karke 100% borderless clean web view provide karta hai.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill">STEALTH</span>
+                  </td>
+                </tr>
+
+                <tr data-category="stealth" data-keywords="click through mouse transparent pass click">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">C</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Toggle Click-Through Mode</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Mouse clicks browser ke aar-paar peeche wale apps (VS Code, Notes, Terminal) par chale jayenge!</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill">STEALTH</span>
+                  </td>
+                </tr>
+
+                <tr data-category="stealth" data-keywords="escape cancel click through normal mouse exit">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">Escape (Esc)</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Cancel Click-Through</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Click-through ko turant band karke normal mouse control wapas lana.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill">STEALTH</span>
+                  </td>
+                </tr>
+
+                <tr data-category="stealth" data-keywords="always on top float pin pin window">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Always on Top (Float Pin)</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Browser ko hamesha saari windows ke upar floating rakhna taaki peeche na chhupe.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill">STEALTH</span>
+                  </td>
+                </tr>
+
+                <tr data-category="stealth" data-keywords="lock size position drag prevent lock window">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">K</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Lock Size &amp; Position</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Window ka size aur jagah lock karna taaki presentation ke waqt galti se drag ya resize na ho.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill">STEALTH</span>
+                  </td>
+                </tr>
+
+                <tr data-category="stealth" data-keywords="lock 36% stealth opacity default transparency">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">L</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Lock 36% Stealth Opacity</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Default stealth transparency level (36%) ko lock / unlock karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill">STEALTH</span>
+                  </td>
+                </tr>
+
+                <tr data-category="stealth" data-keywords="element zap hide website parts ad banner sidebar remove">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">E</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Element Zap (Hide Parts)</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Webpage ke kisi bhi unwanted banner, header ya sidebar ko click karke gayab karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill">STEALTH</span>
+                  </td>
+                </tr>
+
+                <tr data-category="stealth" data-keywords="restore hidden elements unzap reset elements">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">U</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Restore Hidden Elements</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Active website par Element Zap se chupaayi gayi saari cheezein wapas lana.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill">STEALTH</span>
+                  </td>
+                </tr>
+
+                <tr data-category="stealth" data-keywords="gemini ai screen analysis intelligence inspect context">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">G</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Gemini AI Screen Analysis</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Current screen aur active webpage context ko AI se instantly analyze karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill">STEALTH</span>
+                  </td>
+                </tr>
+
+                <!-- 2. Window Transparency & Opacity Controls -->
+                <tr data-category="opacity" data-keywords="increase opacity solid dark plus up">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">⌥</span><span class="kbd-plus">+</span><span class="kbd-key">↑</span>
+                      <span class="kbd-plus" style="margin: 0 4px;">or</span>
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">⌥</span><span class="kbd-plus">+</span><span class="kbd-key">=</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Increase Opacity (+8%)</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Window ko zyada solid / dark banana (8% increments).</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.3); color: #38bdf8;">OPACITY</span>
+                  </td>
+                </tr>
+
+                <tr data-category="opacity" data-keywords="decrease opacity transparent sheer minus down">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">⌥</span><span class="kbd-plus">+</span><span class="kbd-key">↓</span>
+                      <span class="kbd-plus" style="margin: 0 4px;">or</span>
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">⌥</span><span class="kbd-plus">+</span><span class="kbd-key">-</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Decrease Opacity (-8%)</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Window ko zyada transparent banana (8% decrements).</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.3); color: #38bdf8;">OPACITY</span>
+                  </td>
+                </tr>
+
+                <tr data-category="opacity" data-keywords="100% solid opacity normal browser full opaque">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">⌥</span><span class="kbd-plus">+</span><span class="kbd-key">0</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">100% Solid Opacity</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Completely opaque, standard solid macOS browser look.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.3); color: #38bdf8;">OPACITY</span>
+                  </td>
+                </tr>
+
+                <tr data-category="opacity" data-keywords="75% opacity high clarity">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">⌥</span><span class="kbd-plus">+</span><span class="kbd-key">7</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">75% Opacity</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">High clarity transparency with subtle background pass-through.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.3); color: #38bdf8;">OPACITY</span>
+                  </td>
+                </tr>
+
+                <tr data-category="opacity" data-keywords="50% opacity half transparent balanced">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">⌥</span><span class="kbd-plus">+</span><span class="kbd-key">5</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">50% Opacity</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Balanced half-transparency for simultaneous dual-window viewing.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.3); color: #38bdf8;">OPACITY</span>
+                  </td>
+                </tr>
+
+                <tr data-category="opacity" data-keywords="36% opacity stealth sweet spot desktop clear recommended">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">⌥</span><span class="kbd-plus">+</span><span class="kbd-key">6</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">36% Opacity (Stealth Sweet Spot)</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Optimal stealth sweet spot: peeche ka desktop clear dikhta hai jabki browser text crisp rehta hai.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.3); color: #38bdf8;">OPACITY</span>
+                  </td>
+                </tr>
+
+                <tr data-category="opacity" data-keywords="30% opacity ultra sheer ghost view minimum">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">⌥</span><span class="kbd-plus">+</span><span class="kbd-key">3</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">30% Opacity (Ghost View)</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Ultra-sheer ghost view for ultra-subtle heads-up reference.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.3); color: #38bdf8;">OPACITY</span>
+                  </td>
+                </tr>
+
+                <!-- 3. Tabs & Web Browsing Controls -->
+                <tr data-category="browsing" data-keywords="new tab blank tab">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">T</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">New Tab</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Naya blank web browsing tab kholna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">BROWSING</span>
+                  </td>
+                </tr>
+
+                <tr data-category="browsing" data-keywords="close tab active tab dismiss">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">W</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Close Tab</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Current active tab ko safely close karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">BROWSING</span>
+                  </td>
+                </tr>
+
+                <tr data-category="browsing" data-keywords="hide window background app running">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">W</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Hide Window (Background)</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">App background me chalti rahegi, window temporary band ho jayegi.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">BROWSING</span>
+                  </td>
+                </tr>
+
+                <tr data-category="browsing" data-keywords="focus address bar search url omnibox">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">L</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Focus Address / Search Bar</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Seedha URL ya Google search type karne ke liye omnibox focus karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">BROWSING</span>
+                  </td>
+                </tr>
+
+                <tr data-category="browsing" data-keywords="reload page refresh">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">R</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Reload Page</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Active webpage ko reload / refresh karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">BROWSING</span>
+                  </td>
+                </tr>
+
+                <tr data-category="browsing" data-keywords="bookmark page save list favorite">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">D</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Bookmark Page</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Current webpage ko local bookmark list me save karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">BROWSING</span>
+                  </td>
+                </tr>
+
+                <tr data-category="browsing" data-keywords="toggle bookmarks bar show hide bookmarks">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">B</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Toggle Bookmarks Bar</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Bookmarks toolbar ko show ya hide karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">BROWSING</span>
+                  </td>
+                </tr>
+
+                <tr data-category="browsing" data-keywords="find in page search text on page">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">F</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Find in Page</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Webpage ke andar text search bar open karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">BROWSING</span>
+                  </td>
+                </tr>
+
+                <tr data-category="browsing" data-keywords="zoom in make text bigger enlarge">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">+</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Zoom In</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Page ka text aur visuals bada karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">BROWSING</span>
+                  </td>
+                </tr>
+
+                <tr data-category="browsing" data-keywords="zoom out make smaller reduce">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">-</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Zoom Out</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Page ka text aur visual zoom out karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">BROWSING</span>
+                  </td>
+                </tr>
+
+                <tr data-category="browsing" data-keywords="actual size 100% reset zoom">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">0</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Actual Size (100%)</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Page zoom level ko default 100% par reset karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">BROWSING</span>
+                  </td>
+                </tr>
+
+                <!-- 4. Standard Mac System & Editing -->
+                <tr data-category="system" data-keywords="undo revert edit">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Z</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Undo</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Pichle text edit ya input action ko revert karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(251, 146, 60, 0.12); border-color: rgba(251, 146, 60, 0.3); color: #fb923c;">SYSTEM</span>
+                  </td>
+                </tr>
+
+                <tr data-category="system" data-keywords="redo repeat edit">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">Z</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Redo</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Revert kiye gaye text edit ko dobara re-apply karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(251, 146, 60, 0.12); border-color: rgba(251, 146, 60, 0.3); color: #fb923c;">SYSTEM</span>
+                  </td>
+                </tr>
+
+                <tr data-category="system" data-keywords="cut clipboard">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">X</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Cut</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Selected text ko clipboard me cut karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(251, 146, 60, 0.12); border-color: rgba(251, 146, 60, 0.3); color: #fb923c;">SYSTEM</span>
+                  </td>
+                </tr>
+
+                <tr data-category="system" data-keywords="copy clipboard">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">C</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Copy</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Selected text ko clipboard me copy karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(251, 146, 60, 0.12); border-color: rgba(251, 146, 60, 0.3); color: #fb923c;">SYSTEM</span>
+                  </td>
+                </tr>
+
+                <tr data-category="system" data-keywords="paste clipboard">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">V</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Paste</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Clipboard se text paste karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(251, 146, 60, 0.12); border-color: rgba(251, 146, 60, 0.3); color: #fb923c;">SYSTEM</span>
+                  </td>
+                </tr>
+
+                <tr data-category="system" data-keywords="paste plain text strip formatting">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">⌥</span><span class="kbd-plus">+</span><span class="kbd-key">Shift</span><span class="kbd-plus">+</span><span class="kbd-key">V</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Paste as Plain Text</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Styling aur formatting strip karke pure plain text paste karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(251, 146, 60, 0.12); border-color: rgba(251, 146, 60, 0.3); color: #fb923c;">SYSTEM</span>
+                  </td>
+                </tr>
+
+                <tr data-category="system" data-keywords="select all text document">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">A</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Select All</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Poore document ya active input field ka saara content select karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(251, 146, 60, 0.12); border-color: rgba(251, 146, 60, 0.3); color: #fb923c;">SYSTEM</span>
+                  </td>
+                </tr>
+
+                <tr data-category="system" data-keywords="hide app background">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">H</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Hide App</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">Standard macOS app hide shortcut.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(251, 146, 60, 0.12); border-color: rgba(251, 146, 60, 0.3); color: #fb923c;">SYSTEM</span>
+                  </td>
+                </tr>
+
+                <tr data-category="system" data-keywords="quit shieldbrowser completely exit terminate close">
+                  <td>
+                    <div class="kbd-combo">
+                      <span class="kbd-key">⌘</span><span class="kbd-plus">+</span><span class="kbd-key">Q</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="shortcut-action-name">Quit ShieldBrowser Completely</div>
+                  </td>
+                  <td>
+                    <div class="shortcut-desc-text">ShieldBrowser process ko safely terminate aur close karna.</div>
+                  </td>
+                  <td style="text-align: right;">
+                    <span class="shortcut-badge-pill" style="background: rgba(251, 146, 60, 0.12); border-color: rgba(251, 146, 60, 0.3); color: #fb923c;">SYSTEM</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Frequently Asked Questions</div>
+          <h2 class="section-title">Everything You Need to <span class="highlight">Know</span></h2>
+          <p class="section-subtitle">
+            Have questions about macOS window server exclusion, payment, or compatibility? Here are direct answers.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <!-- FAQ Item 1 -->
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span>Will meeting attendees on Zoom or Google Meet see a black box where the window is?</span>
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="faq-answer">
+              No, absolutely not. Unlike DRM video players (such as Netflix or protected streaming software) that render an awkward, suspicious black cutout rectangle on screen shares, ShieldBrowser communicates directly with the native macOS Quartz Display Server compositor using <code>CGWindowSharingType.none</code>. The operating system's window server completely excludes ShieldBrowser's surface buffer from all frame-capture pipelines. Viewers in Zoom, Google Meet, Teams, Discord, Slack, and OBS see only your natural desktop wallpaper or whatever software is running directly behind the window.
+            </div>
+          </details>
+
+          <!-- FAQ Item 2 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Does ShieldBrowser run natively on Apple Silicon M1, M2, M3, M4, M5, and M6 Macs?</span>
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="faq-answer">
+              Yes, 100% natively. ShieldBrowser is built as an optimized Apple Universal binary (arm64 + x86_64). It executes natively across the entire Apple Silicon lineup—including <strong>M1, M2, M3, M4, M5, and M6</strong> chips (Base, Pro, Max, and Ultra configurations)—with direct Metal graphics acceleration and zero Rosetta 2 translation overhead. It is also fully verified on legacy Intel Core Macs running macOS 12.0 (Monterey) all the way up through the latest <strong>macOS 27.0+ (Golden Gate)</strong>.
+            </div>
+          </details>
+
+          <!-- FAQ Item 3 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>How does the 5-Minute Complimentary Hardware Trial work?</span>
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="faq-answer">
+              Every physical Mac receives an automatic, unrestricted <strong>5-minute complimentary hardware test trial</strong> upon first launch. No credit card or registration fee is required. We strongly urge every user to open a test call on Zoom, Google Meet, or Microsoft Teams, share their entire screen, and verify with a secondary device or test participant that ShieldBrowser is 100% invisible before purchasing any time-bound pass.
+            </div>
+          </details>
+
+          <!-- FAQ Item 4 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>How does in-app pass activation work, and are there any recurring subscriptions?</span>
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="faq-answer">
+              All pass purchases take place securely and natively inside the ShieldBrowser macOS application. There are <strong>zero recurring subscription charges</strong> and zero hidden auto-renewal traps. When your pass expires, it simply ends without unexpected credit card debits. You can choose from 6 transparent, time-bound passes (24 Hours, 3 Days, 7 Days, 1 Month, 3 Months, or 1 Year) and pay seamlessly via UPI (Google Pay, PhonePe, Paytm, CRED) or Debit/Credit Cards. Your pass activates cryptographically within 5 seconds.
+            </div>
+          </details>
+
+          <!-- FAQ Item 5 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>What is Ghost Mode, and why is the 36% Opacity Sweet Spot recommended?</span>
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="faq-answer">
+              Pressing <code>⌘ + Shift + H</code> activates <strong>Ghost Mode</strong>, which strips away the window chrome, address bar, and tabs to provide a 100% borderless floating web viewport. By pressing <code>⌘ + ⌥ + 6</code>, you lock the browser at exactly <strong>36% opacity</strong>—the scientifically calibrated "Stealth Sweet Spot." At 36%, web text, documentation, and interview notes remain crisp and readable to you, while your background desktop or coding IDE shines through naturally, making your gaze and screen activity appear completely organic.
+            </div>
+          </details>
+
+          <!-- FAQ Item 6 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>How does Click-Through Mode work while coding or taking notes?</span>
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="faq-answer">
+              Pressing <code>⌘ + Shift + C</code> toggles <strong>Click-Through Mode</strong>. When enabled, your mouse cursor passes completely through the ShieldBrowser window as if it were air, allowing you to click, highlight, scroll, and type in VS Code, Xcode, Figma, or your Terminal running underneath—all while keeping your reference notes floating visibly on top! Pressing <code>Escape (Esc)</code> instantly restores normal cursor interaction to ShieldBrowser.
+            </div>
+          </details>
+
+          <!-- FAQ Item 7 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Can I transfer my pass if I change or upgrade my Mac?</span>
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="faq-answer">
+              Yes. Each pass is cryptographically anchored to your physical Mac's hardware identifier (<code>IOPlatformUUID</code>) to prevent unauthorized credential sharing and key piracy. If you purchase a new MacBook, iMac, or Mac Studio, simply reach out to our dedicated support desk at <a href="contact.html" style="color: var(--accent-emerald);">support@shieldbrowser.com</a> with your transaction reference. Our engineering team will release the old hardware token and re-bind your active pass to your new machine in under 2 hours.
+            </div>
+          </details>
+
+          <!-- FAQ Item 8 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Does ShieldBrowser record or store my web browsing history or credentials?</span>
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="faq-answer">
+              Never. ShieldBrowser operates on a strict <strong>Zero-Logs Architecture</strong>. We do not operate remote telemetry collectors, behavioral trackers, or keyloggers. Your cookies, browsing history, cache, and saved credentials reside exclusively inside your Mac's encrypted sandboxed container on your local APFS disk. Furthermore, our native Apple WebKit engine uses isolated memory pools that are purged immediately upon quitting the application.
+            </div>
+          </details>
+
+          <!-- FAQ Item 9 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>What is the Cancellation and Refund Policy?</span>
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="faq-answer">
+              We stand behind the engineering excellence of ShieldBrowser. If you encounter an unresolved technical malfunction or compatibility failure on any supported macOS version (macOS 12 to 27 Golden Gate) that our engineering team cannot fix within 24 hours of report, you are entitled to a <strong>100% full refund</strong>. Because passes are time-bound and non-recurring, there are no cancellation fees or lock-ins. Full details are available on our <a href="refund-policy.html" style="color: var(--accent-emerald);">Refund Policy</a> page.
+            </div>
+          </details>
+
+          <!-- FAQ Item 10 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>How do I open the .DMG if Apple Gatekeeper shows a security prompt?</span>
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="faq-answer">
+              Because ShieldBrowser is distributed independently outside the Mac App Store to support advanced display-server exclusion APIs, macOS Gatekeeper may prompt: <em>"Apple cannot check it for malicious software."</em> To open it smoothly: right-click (or Control-click) <strong>ShieldBrowser</strong> in your Applications folder and select <strong>Open</strong>, then click <strong>Open</strong> in the dialog. Alternatively, go to <strong>System Settings &gt; Privacy &amp; Security</strong> and click <strong>Open Anyway</strong>, or run <code>xattr -cr /Applications/ShieldBrowser.app</code> in Terminal.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="assets/icons/app-icon.png" alt="ShieldBrowser" class="brand-logo-img">
+            <span class="brand-name">Shield<span>Browser</span></span>
+          </a>
+          <p>
+            The premier privacy browser for macOS engineered with native Quartz Window Server compositor isolation. 100% excluded from screen-sharing streams.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#demo">Live Demo</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#pricing">Pricing Passes</a></li>
+            <li><a href="download.html">Download Center</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Engineering</h4>
+          <ul class="footer-links">
+            <li><a href="features.html">Quartz Compositor</a></li>
+            <li><a href="how-it-works.html">Display Architecture</a></li>
+            <li><a href="download.html#gatekeeper">Gatekeeper Guide</a></li>
+            <li><a href="pricing.html#faq">Pricing FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal &amp; Merchant</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
+            <li><a href="shipping.html">Digital Goods Delivery</a></li>
+            <li><a href="contact.html">Contact Us &amp; SLA</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-legal-notice">
+          © 2026 ShieldBrowser Technologies. All rights reserved. Apple, Mac, macOS, and Quartz are trademarks of Apple Inc., registered in the U.S. and other countries. ShieldBrowser is independently developed and not affiliated with Apple, Zoom, Google, or Microsoft.
+        </div>
+        <div class="system-status">
+          <span class="status-dot"></span>
+          <span>All Systems Operational • macOS 27 Golden Gate Ready</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- In-App Activation Guidance Modal -->
+  <div class="modal-backdrop" id="in-app-activation-modal" role="dialog" aria-modal="true" aria-labelledby="modal-plan-title">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+      <img src="assets/icons/app-icon.png" alt="ShieldBrowser" class="modal-icon">
+      
+      <h3 class="modal-title">Activate <span id="modal-plan-title" class="highlight">7 Days Pass</span> (<span id="modal-plan-price">₹499</span>)</h3>
+      <p class="modal-subtitle">
+        For your device security and instant hardware cryptographic binding, passes are activated directly inside the <strong>ShieldBrowser macOS App</strong>:
+      </p>
+
+      <div class="modal-step-box">
+        <span class="modal-step-badge">STEP 1</span>
+        <div>
+          <h4 class="modal-step-title">Download &amp; Open ShieldBrowser</h4>
+          <p class="modal-step-desc">Get the universal macOS installer and move it to your <code>/Applications</code> folder.</p>
+        </div>
+      </div>
+
+      <div class="modal-step-box">
+        <span class="modal-step-badge">STEP 2</span>
+        <div>
+          <h4 class="modal-step-title">Sign In with Google</h4>
+          <p class="modal-step-desc">Open the app and sign in. Your 5-minute complimentary hardware trial begins instantly.</p>
+        </div>
+      </div>
+
+      <div class="modal-step-box">
+        <span class="modal-step-badge">STEP 3</span>
+        <div>
+          <h4 class="modal-step-title">Select Pass &amp; Pay via UPI / Cards</h4>
+          <p class="modal-step-desc">Click the account profile in the browser toolbar, select this pass, and complete payment. It activates in seconds!</p>
+        </div>
+      </div>
+
+      <div class="modal-actions" style="flex-wrap: wrap;">
+        <a href="downloads/ShieldBrowser-v1.0.4.dmg" class="btn btn-primary btn-shimmer" download style="flex: 1; min-width: 200px;">
+          <span> Download .DMG (2.3 MB)</span>
+        </a>
+        <a href="https://www.mediafire.com/file/0jfihittclvhhkl/ShieldBrowser-v1.0.4.dmg/file" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="flex: 1; min-width: 180px;">
+          <span>🌐 MediaFire Mirror ↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/canvas-3d.js"></script>
+  <script src="js/simulator.js"></script>
+  <script src="js/pricing.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
