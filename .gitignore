@@ -3,3 +3,17 @@
 Thumbs.db
 .tempmediaStorage/
 scratch/
+
+# Auto-added standard ignores
+*.env
+*.log
+.env
+.env.*.local
+.env.local
+.next/
+.pnp.js
+.pnp/
+.turbo/
+build/
+dist/
+node_modules/
